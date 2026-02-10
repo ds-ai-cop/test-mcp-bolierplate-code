@@ -1,4 +1,4 @@
-@Figma [여기에 피그마 파일 링크 붙여넣기]
+@Figma https://www.figma.com/design/nNLORwZg8bT0F9qM3OlMBz/-%EC%98%88%EC%A0%9C--iOS-%EB%89%B4%EC%8A%A4%EC%95%B1--Community-?node-id=0-1&p=f&t=Zi1LcQchqaSj3en0-0
 
 Next.js 14+ (App Router)를 사용하여 'IT 인사이트 및 컨퍼런스 종합 플랫폼' 신규 프로젝트를 생성해줘. 
 
