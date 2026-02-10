@@ -1,0 +1,108 @@
+import type {
+  Conference,
+  ConferenceCategory,
+  ItInsightArticle,
+} from "@/types/conference";
+
+export const CONFERENCE_CATEGORIES: ConferenceCategory[] = [
+  "All",
+  "Frontend",
+  "Backend",
+  "AI",
+  "DevOps",
+];
+
+export const DUMMY_CONFERENCES: Conference[] = [
+  {
+    id: "conf-1",
+    title: "Next.js & React 19 Deep Dive",
+    organizer: "JS Seoul",
+    location: "서울 강남",
+    mode: "Offline",
+    category: "Frontend",
+    date: "2026-03-21",
+    startTime: "13:30",
+    endTime: "18:00",
+    level: "Intermediate",
+    tags: ["Next.js 16", "React 19", "App Router"],
+    highlights: "React 19의 Compiler와 Next.js 16 베스트 프랙티스 집중 분석",
+  },
+  {
+    id: "conf-2",
+    title: "AI Engineering Summit",
+    organizer: "AI Korea",
+    location: "온라인",
+    mode: "Online",
+    category: "AI",
+    date: "2026-04-05",
+    startTime: "10:00",
+    endTime: "17:00",
+    level: "Advanced",
+    tags: ["LLM", "RAG", "MCP"],
+    highlights: "실제 프로덕트에 AI 기능을 녹이는 전략과 사례 공유",
+  },
+  {
+    id: "conf-3",
+    title: "Modern Backend & Observability",
+    organizer: "DevOps Korea",
+    location: "판교",
+    mode: "Hybrid",
+    category: "Backend",
+    date: "2026-03-30",
+    startTime: "14:00",
+    endTime: "19:00",
+    level: "Intermediate",
+    tags: ["Microservices", "Observability", "Kubernetes"],
+    highlights: "분산 트레이싱과 로그/메트릭 기반 장애 대응 전략",
+  },
+  {
+    id: "conf-4",
+    title: "Frontend DX & Design Systems",
+    organizer: "FE Conf",
+    location: "온라인",
+    mode: "Online",
+    category: "Frontend",
+    date: "2026-05-10",
+    startTime: "19:30",
+    endTime: "22:00",
+    level: "Beginner",
+    tags: ["Design System", "Shadcn UI", "Figma"],
+    highlights: "Figma와 Shadcn UI를 활용한 실전 디자인 시스템 구축",
+  },
+];
+
+export const DUMMY_IT_ARTICLES: ItInsightArticle[] = [
+  {
+    id: "article-1",
+    title: "React 19 Compiler가 팀 생산성에 미치는 영향",
+    source: "Velog",
+    category: "Frontend",
+    publishedAt: "2026-02-09",
+    readingTimeMinutes: 7,
+  },
+  {
+    id: "article-2",
+    title: "MCP 기반 AI 개발 워크플로우 정리",
+    source: "Medium",
+    category: "AI",
+    publishedAt: "2026-02-08",
+    readingTimeMinutes: 9,
+  },
+  {
+    id: "article-3",
+    title: "Next.js 16 서버 액션과 백엔드 아키텍처",
+    source: "Naver D2",
+    category: "Backend",
+    publishedAt: "2026-02-05",
+    readingTimeMinutes: 6,
+  },
+  {
+    id: "article-4",
+    title: "DevOps 팀을 위한 관측 가능성(Observability) 체크리스트",
+    source: "Tech Blog",
+    category: "DevOps",
+    publishedAt: "2026-02-01",
+    readingTimeMinutes: 8,
+  },
+];
+
