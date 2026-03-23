@@ -1,4 +1,4 @@
-@Figma https://www.figma.com/design/nNLORwZg8bT0F9qM3OlMBz/-%EC%98%88%EC%A0%9C--iOS-%EB%89%B4%EC%8A%A4%EC%95%B1--Community-?node-id=0-1&p=f&t=Zi1LcQchqaSj3en0-0
+@Figma https://www.figma.com/make/w0HFdn7TkVqdpct8nXLR6K/%EC%95%B1-%EB%94%94%EC%9E%90%EC%9D%B8-%EC%83%9D%EC%84%B1?p=f&t=11MqS43r4qF5y3WU-0
 
 Next.js 14+ (App Router)를 사용하여 'IT 인사이트 및 컨퍼런스 종합 플랫폼' 신규 프로젝트를 생성해줘. 
 

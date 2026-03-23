@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
-/* Figma iOS 뉴스앱 기반 전역 컬러 & 타이포그래피 토큰 */
+/* Figma iOS 뉴스앱 기반 전역 컬러 & 타이포그래피 토큰
+   Source: `src/lib/figma-source.ts` (makeAppDesigner)
+*/
 :root {
   /* Colors (from Style Guide_News app) */
   --background: #ffffff; /* fill_8CSCIU */
