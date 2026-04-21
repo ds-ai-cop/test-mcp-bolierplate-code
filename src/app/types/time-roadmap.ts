@@ -16,6 +16,8 @@ export interface EventInsight {
 export interface EventTrend {
   type: string;
   title: string;
+  link?: string;
+  linkurl?: string;
 }
 
 export interface LeaderTalk {

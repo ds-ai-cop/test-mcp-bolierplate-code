@@ -13,8 +13,16 @@
           "description": "라스베이거스에서 개최되는 세계 최대 IT 가전 전시회입니다. 2026년에는 모빌리티, 스마트홈, 로보틱스 전반에 걸쳐 '연결성'을 넘어선 '자율성'을 갖춘 AI 디바이스들이 대거 상용화 라인업으로 공개됩니다."
         },
         "trends": [
-          { "type": "동향", "title": "온디바이스 AI 가전 출하량 비중 변화" },
-          { "type": "리포트", "title": "차세대 모빌리티 공간 컴퓨팅 트렌드 분석" }
+          { 
+            "type": "동향", 
+            "title": "온디바이스 AI 가전 출하량 비중 변화",
+            "link": "https://www.ces.tech/topics/topics/automotive-self-driving-vehicles/" 
+          },
+          { 
+            "type": "리포트", 
+            "title": "차세대 모빌리티 공간 컴퓨팅 트렌드 분석",
+            "link": "https://www.sysdig.com/press-releases/2026-usage-report"
+          }
         ],
         "leader_talk": {
           "speaker_name": "게리 샤피로",
@@ -35,8 +43,16 @@
           "description": "바르셀로나에서 열리는 세계 최대 모바일 전시회입니다. 5G-Advanced의 성숙과 함께 6G 통신망의 기초 아키텍처가 공개되며, 통신 인프라 내부에 AI가 직접 내재화되는 'AI-Native Network' 개념 증명이 주요 화두가 됩니다."
         },
         "trends": [
-          { "type": "동향", "title": "글로벌 통신사의 생성형 AI 인프라 투자 규모" },
-          { "type": "논문", "title": "위성망과 지상 5G망의 하이브리드 지연시간 최적화" }
+          { 
+            "type": "동향", 
+            "title": "글로벌 통신사의 생성형 AI 인프라 투자 규모",
+            "link": "https://www.armosec.io/blog/ai-agent-security-framework-for-cloud-environments/"
+          },
+          { 
+            "type": "논문", 
+            "title": "위성망과 지상 5G망의 하이브리드 지연시간 최적화",
+            "link": "https://arxiv.org/html/2602.22718v1" 
+          }
         ],
         "leader_talk": {
           "speaker_name": "마츠 그란리드",
@@ -57,9 +73,21 @@
           "description": "새너제이에서 개최되는 글로벌 AI 컨퍼런스입니다. 블랙웰(Blackwell) 이후의 차세대 GPU 아키텍처 로드맵이 다뤄지며, 물리적 AI(로보틱스), 산업용 디지털 트윈 시스템의 최신 연구 결과가 발표됩니다."
         },
         "trends": [
-          { "type": "동향", "title": "엔터프라이즈 AI 팩토리 구축 및 운영 비용 분석" },
-          { "type": "논문", "title": "초거대 AI 훈련을 위한 전력 효율 극대화 알고리즘" },
-          { "type": "리포트", "title": "휴머노이드 로봇을 위한 파운데이션 모델 생태계" }
+          { 
+            "type": "동향", 
+            "title": "엔터프라이즈 AI 팩토리 구축 및 운영 비용 분석",
+            "link": "https://www.sysdig.com/press-releases/2026-usage-report"
+          },
+          { 
+            "type": "논문", 
+            "title": "초거대 AI 훈련을 위한 전력 효율 극대화 알고리즘",
+            "link": "https://arxiv.org/html/2602.22718v1" 
+          },
+          { 
+            "type": "리포트", 
+            "title": "휴머노이드 로봇을 위한 파운데이션 모델 생태계",
+            "link": "https://www.ces.tech/topics/topics/automotive-self-driving-vehicles/"
+          }
         ],
         "leader_talk": {
           "speaker_name": "젠슨 황",
@@ -80,80 +108,21 @@
           "description": "라스베이거스 만달레이 베이 컨벤션 센터에서 열립니다. 버텍스 AI(Vertex AI)의 고도화와 함께 엔터프라이즈 환경에서 데이터를 스스로 분석하고 파이프라인을 구축하는 자율형 클라우드 에이전트 상용화 사례가 중점적으로 다뤄집니다."
         },
         "trends": [
-          { "type": "동향", "title": "서버리스 환경에서의 LLM 추론 비용 절감 사례" },
-          { "type": "리포트", "title": "클라우드 네이티브 보안을 위한 AI 에이전트 도입 전략" }
+          { 
+            "type": "동향", 
+            "title": "서버리스 환경에서의 LLM 추론 비용 절감 사례",
+            "link": "https://arxiv.org/html/2603.06350v1" 
+          },
+          { 
+            "type": "리포트", 
+            "title": "클라우드 네이티브 보안을 위한 AI 에이전트 도입 전략",
+            "link": "https://www.armosec.io/blog/ai-agent-security-framework-for-cloud-environments/" 
+          }
         ],
         "leader_talk": {
           "speaker_name": "토마스 쿠리안",
           "speaker_title": "Google Cloud CEO",
           "quote": "데이터가 머무는 곳에 지능을 심으십시오. 클라우드는 이제 수동적인 저장 공간이 아니라 비즈니스를 능동적으로 실행하는 주체입니다."
-        }
-      },
-      {
-        "id": "evt_2026_05",
-        "title": "Google I/O 2026",
-        "date": "2026-05-19",
-        "category": "Web / Mobile",
-        "theme": "PoC",
-        "linkurl": "https://io.google/",
-        "insight": {
-          "highlight_title": "안드로이드와 멀티모달 AI의 융합",
-          "highlight_text": "모바일 앱 개발 초기 기획 단계의 40%가 AI 코파일럿 도구로 대체될 전망입니다.",
-          "description": "마운틴뷰 쇼어라인 앰피시어터에서 개최됩니다. 차세대 안드로이드 OS의 핵심 코어에 멀티모달 제미나이(Gemini) 모델이 어떻게 통합되는지 시연되며, 웹 표준(WebXR, Wasm) 기술의 최신 진척 상황이 공유됩니다."
-        },
-        "trends": [
-          { "type": "동향", "title": "크로스 플랫폼 프레임워크와 네이티브 AI API 결합 사례" },
-          { "type": "논문", "title": "경량화된 온디바이스 비전 모델의 처리 속도 한계 돌파" }
-        ],
-        "leader_talk": {
-          "speaker_name": "순다르 피차이",
-          "speaker_title": "Alphabet CEO",
-          "quote": "우리의 목표는 세상을 정리하는 것을 넘어, 사용자 개개인의 맥락을 완벽하게 이해하고 일상을 지원하는 인공지능을 만드는 것입니다."
-        }
-      },
-      {
-        "id": "evt_2026_06_build",
-        "title": "Microsoft Build 2026",
-        "date": "2026-06-02",
-        "category": "DevOps / Web",
-        "theme": "상용화",
-        "linkurl": "https://build.microsoft.com/",
-        "insight": {
-          "highlight_title": "AI 기반 개발자 경험(Developer Experience)의 완성",
-          "highlight_text": "코드 작성보다 아키텍처 설계 및 프롬프트 검증 역량이 시니어 개발자의 새로운 평가 기준이 됩니다.",
-          "description": "샌프란시스코 포트 메이슨 센터에서 온·오프라인으로 열립니다. 깃허브 코파일럿(GitHub Copilot)의 차세대 버전과 애저(Azure) 오픈AI 서비스의 신규 기능이 발표되며, 제로 코드(Zero-Code)에서 자가 치유(Self-healing) 인프라까지 개발 워크플로우 전반의 AI 혁신을 다룹니다."
-        },
-        "trends": [
-          { "type": "동향", "title": "AI 코딩 어시스턴트 적용 전후의 생산성 향상 지표 비교" },
-          { "type": "리포트", "title": "엔터프라이즈 환경에서의 AI 모델 미세조정(Fine-Tuning) 모범 사례" }
-        ],
-        "leader_talk": {
-          "speaker_name": "사티아 나델라",
-          "speaker_title": "Microsoft CEO",
-          "quote": "개발자 여러분, 이제 코드를 짜는 시간보다 어떤 문제를 풀 것인지 사유하는 시간에 집중하십시오. AI가 여러분의 아이디어를 실현해 줄 것입니다."
-        }
-      },
-      {
-        "id": "evt_2026_06_wwdc",
-        "title": "Apple WWDC 2026",
-        "date": "2026-06-08",
-        "category": "Mobile / AI",
-        "theme": "R&D",
-        "linkurl": "https://developer.apple.com/wwdc/",
-        "insight": {
-          "highlight_title": "공간 컴퓨팅과 프라이버시 AI",
-          "highlight_text": "앱 생태계의 30%가 2D 화면 인터페이스에서 대화형 VUI 및 공간 UI 기반으로 설계 개편될 것입니다.",
-          "description": "쿠퍼티노 애플 파크에서 개막합니다. 사용자 프라이버시를 유지하면서 구동되는 한 차원 높은 'Apple Intelligence'의 청사진이 공유됩니다. visionOS 업데이트와 함께 공간 컴퓨팅 앱 개발을 위한 새로운 API가 대거 추가됩니다."
-        },
-        "trends": [
-          { "type": "동향", "title": "앱스토어 내 대화형 AI 기능 통합 앱 비중 변화" },
-          { "type": "논문", "title": "로컬 환경에서의 컨텍스트 기반 사용자 의도 예측 모델" },
-          { "type": "리포트", "title": "공간 컴퓨팅 시대의 UX/UI 패러다임 전환" }
-        ],
-        "leader_talk": {
-          "speaker_name": "팀 쿡",
-          "speaker_title": "Apple CEO",
-          "quote": "가장 진보된 기술은 사용자가 기술을 의식하지 않게 만드는 것입니다. 우리의 혁신은 언제나 인간의 일상을 더 자연스럽게 이끄는 데 있습니다."
         }
       },
       {
@@ -169,8 +138,16 @@
           "description": "라스베이거스에서 개최되는 대규모 클라우드 컨퍼런스입니다. 대용량 분산 시스템 아키텍처의 자율 운영 모델과 AWS의 독자적인 AI 가속기(Trainium 등) 칩셋 로드맵이 심층적으로 다뤄지며 기업의 IT 비용 효율화 방안을 제시합니다."
         },
         "trends": [
-          { "type": "동향", "title": "글로벌 엔터프라이즈의 서버리스 아키텍처 전환 완료율" },
-          { "type": "리포트", "title": "멀티 클라우드 환경의 중앙 집중형 AI 거버넌스 프레임워크" }
+          { 
+            "type": "동향", 
+            "title": "글로벌 엔터프라이즈의 서버리스 아키텍처 전환 완료율",
+            "link": "https://arxiv.org/html/2603.06350v1" 
+          },
+          { 
+            "type": "리포트", 
+            "title": "멀티 클라우드 환경의 중앙 집중형 AI 거버넌스 프레임워크",
+            "link": "https://www.redhat.com/en/blog/state-cloud-native-security-2026-maturity-gaps-and-automation-mandate" 
+          }
         ],
         "leader_talk": {
           "speaker_name": "맷 가먼",

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { ChevronLeft, Share2, Bookmark, BarChart3, TrendingUp, Lightbulb } from "lucide-react";
 import { differenceInCalendarDays, format, parseISO, startOfDay } from "date-fns";
 import type { RoadmapDatasetEvent } from "../types/time-roadmap";
@@ -37,6 +37,19 @@ export const Draft3 = ({
   const eventDate = parseISO(event.date);
   const ddayDiff = differenceInCalendarDays(startOfDay(eventDate), startOfDay(new Date()));
   const ddayLabel = ddayDiff <= 0 ? "D-Day" : `D-${ddayDiff}`;
+  const heroGif = useMemo(() => {
+    const gifPool = [
+      "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmwzM2Y0bXI4dHkxMTk0cnBkdGFlMDR1N2swNWUyZDZpbGVxdGZkeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9dg/itjULPVDW2y1IYv1Oz/giphy.gif",
+      "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExajhvZGdzazBxemtqZjl0bmc4dTVuajZkc28zaXY5b3lhZTE2aG9xaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9dg/Gc6uTfUrvXVCbCxf4T/giphy.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExamo2OXBybGw5OXh4bmszcXQzbHg2M214d3hqMXhwdDZ1bzViOXF0NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wwg1suUiTbCY8H8vIA/giphy.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHB2YnRvbW1rcnlub3Y4NWowMHdnNndvZXY3d2F6NTgwZXNveHBlciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fwbZnTftCXVocKzfxR/giphy.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3hkcDI2YWIyMGkzYjVieXhmbGg4Y2Z1cmk4d3lxd283MzB2aTd3NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/66M6ZwJkTLYikvhrqZ/giphy.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXN2bm85aGFtMDkxcmNubG01eGNiOHA4OHdwYWV0Z3owZnR6dzk0ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KGhpQ5NMoWKQurlHwI/giphy.gif",
+      "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGE0M2pjZDI1NDB0MXB5d3p5NnV4bmZqNzQ1dm5oZmFucXFpc3RuYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OLPQ6z2hlHmwFc4Hso/giphy.gif",
+      "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzB2OWxrdjRteDVudW94ZWZ4OHV1cGVqcG1wdjJicXczNjQzOTJhZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/GrPgFtvyLlgElFiO7m/giphy.gif",
+    ];
+    return gifPool[Math.floor(Math.random() * gifPool.length)];
+  }, [event.id]);
 
   return (
     <div
@@ -81,8 +94,8 @@ export const Draft3 = ({
         {/* 2. Hero / Event Image (wf-box bg-gray-200) */}
         <div className="relative w-full h-[150px] bg-slate-200 overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1762968269894-1d7e1ce8894e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNoJTIwY29uZmVyZW5jZSUyMGtleW5vdGV8ZW58MXx8fHwxNzc1MTA3MDk4fDA&ixlib=rb-4.1.0&q=80&w=1080"
-            alt="Apple WWDC 2026"
+            src={heroGif}
+            alt="Tech abstract GIF"
             className="w-full h-full object-cover opacity-90"
           />
           {/* Gradient Overlay */}
@@ -141,24 +154,19 @@ export const Draft3 = ({
 
           {/* 4. Theme / Progress Bar */}
           <section className={`rounded-lg p-2.5 shadow-sm border ${isDarkMode ? "bg-slate-900 border-slate-700" : "bg-white border-slate-100"}`}>
-            <div className={`text-[8px] font-bold mb-2 ${isDarkMode ? "text-slate-300" : "text-slate-500"}`}>
-              (Theme)
-            </div>
             <div className="w-full flex justify-between items-center px-2 relative">
-              {/* Background Line */}
-              <div className="absolute top-[5px] left-6 right-6 h-[1px] bg-slate-200 -z-10"></div>
-              
-              {/* Steps */}
+              <div className={`absolute top-[5px] left-6 right-6 h-[1px] ${isDarkMode ? "bg-slate-700" : "bg-slate-200"} -z-10`}></div>
+
               <div className="flex flex-col items-center gap-1 px-1">
                 <div className={`w-2.5 h-2.5 rounded-full ${event.theme === "R&D" ? "bg-blue-500" : "bg-slate-300"}`}></div>
                 <span className={`text-[7px] ${event.theme === "R&D" ? "font-bold text-blue-600" : "font-semibold text-slate-500"}`}>R&D</span>
               </div>
-              
+
               <div className="flex flex-col items-center gap-1 px-1">
                 <div className={`w-2.5 h-2.5 rounded-full ${event.theme === "PoC" ? "bg-blue-500" : "bg-slate-200"}`}></div>
                 <span className={`text-[7px] ${event.theme === "PoC" ? "font-bold text-blue-600" : "font-medium text-slate-400"}`}>PoC</span>
               </div>
-              
+
               <div className="flex flex-col items-center gap-1 px-1">
                 <div className={`w-2.5 h-2.5 rounded-full ${event.theme === "상용화" ? "bg-blue-500" : "bg-slate-200"}`}></div>
                 <span className={`text-[7px] ${event.theme === "상용화" ? "font-bold text-blue-600" : "font-medium text-slate-400"}`}>상용화</span>
@@ -177,7 +185,18 @@ export const Draft3 = ({
                 <li key={`${trend.type}-${trend.title}`} className="flex items-center gap-1.5">
                   <div className="w-1 h-1 rounded-full bg-indigo-500 shrink-0"></div>
                   <span className="font-bold text-indigo-600">[{trend.type}]</span>
-                  <span className="truncate">{trend.title}</span>
+                  {trend.linkurl || trend.link ? (
+                    <a
+                      href={trend.linkurl ?? trend.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="truncate underline decoration-indigo-400/60 underline-offset-2 hover:text-indigo-500"
+                    >
+                      {trend.title}
+                    </a>
+                  ) : (
+                    <span className="truncate">{trend.title}</span>
+                  )}
                 </li>
               ))}
             </ul>
