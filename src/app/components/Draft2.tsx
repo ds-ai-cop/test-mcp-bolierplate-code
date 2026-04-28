@@ -59,7 +59,11 @@ const SectionContainer = ({
 // ----------------------------------------------------------------------
 // 2. Core Signals Section (Draft 2)
 // ----------------------------------------------------------------------
-const CoreSignals = () => {
+const CoreSignals = ({
+  onOpenDetail,
+}: {
+  onOpenDetail: (event: RoadmapDatasetEvent) => void;
+}) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -78,43 +82,61 @@ const CoreSignals = () => {
   ];
 
   const signals = useMemo(() => {
-    const source = [...(roadmap2026.events ?? [])];
+    const now = new Date();
+    const currentMonthKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
+    const monthlyEvents = (roadmap2026.events ?? []).filter((event) =>
+      event.date.startsWith(currentMonthKey),
+    );
+    const source = [...monthlyEvents];
     const shuffled = source.sort(() => Math.random() - 0.5);
     return shuffled.slice(0, 3).map((event, idx) => ({
+      dday:
+        (() => {
+          const diff = differenceInCalendarDays(parseISO(event.date), startOfDay(new Date()));
+          if (diff === 0) return "D-Day";
+          if (diff > 0) return `D-${diff}`;
+          return `D+${Math.abs(diff)}`;
+        })(),
       title: event.title,
       tag: event.theme === "상용화" ? "HOT" : event.theme === "PoC" ? "NEW" : "TREND",
       desc: event.insight?.highlight_text ?? event.insight?.description ?? "",
-      linkurl: event.linkurl,
+      event,
       ...signalStyles[idx % signalStyles.length],
     }));
   }, []);
+
+  if (signals.length === 0) {
+    return null;
+  }
 
   return (
     <section className="mb-0.5">
       <div className="mb-1.5 px-0.5">
         <h2 className="text-xs font-bold text-slate-100 tracking-wider">
-          오늘의 핵심 시그널
+          이달의 핵심 시그널
         </h2>
       </div>
       <div className="mx-[-2px]">
         <Slider {...settings}>
           {signals.map((sig, idx) => (
             <div key={idx} className="px-0.5 pb-3">
-              <a
-                href={sig.linkurl || undefined}
-                target={sig.linkurl ? "_blank" : undefined}
-                rel={sig.linkurl ? "noopener noreferrer" : undefined}
-                className={`${sig.bg} border ${sig.border} rounded-xl p-2.5 h-[115px] flex flex-col justify-between text-slate-200 shadow-[0_0_15px_rgba(0,0,0,0.5)] ${
-                  sig.linkurl ? "cursor-pointer active:scale-[0.98]" : "cursor-default opacity-90"
-                } transition-transform relative overflow-hidden block`}
+              <button
+                type="button"
+                onClick={() => onOpenDetail(sig.event)}
+                className={`${sig.bg} border ${sig.border} rounded-xl p-2.5 h-[115px] flex flex-col justify-between text-slate-200 shadow-[0_0_15px_rgba(0,0,0,0.5)] cursor-pointer active:scale-[0.98] transition-transform relative overflow-hidden block w-full text-left`}
               >
                 {/* Glow effect in background */}
                 <div className={`absolute -top-10 -right-10 w-24 h-24 ${sig.bg.replace('800', '700')} blur-2xl opacity-50 rounded-full`}></div>
                 
                 <div className="flex flex-col items-start relative z-10">
-                  <span className={`text-[6px] font-bold px-1.5 py-0.5 ${sig.accent} bg-slate-900/80 rounded-sm border border-slate-700/50 mb-1.5`}>
-                    {sig.tag}
-                  </span>
+                  <div className="flex items-center gap-1 mb-1.5">
+                    <span className={`text-[6px] font-bold px-1.5 py-0.5 ${sig.accent} bg-slate-900/80 rounded-sm border border-slate-700/50`}>
+                      {sig.tag}
+                    </span>
+                    <span className="text-[6px] font-bold px-1.5 py-0.5 text-cyan-200 bg-slate-900/80 rounded-sm border border-slate-700/50">
+                      {sig.dday}
+                    </span>
+                  </div>
                   <h3 className="text-[10px] font-bold leading-snug text-white">
                     {sig.title}
                   </h3>
@@ -122,7 +144,7 @@ const CoreSignals = () => {
                 <p className="text-[7px] text-slate-400 line-clamp-3 leading-relaxed font-light mt-1 relative z-10">
                   {sig.desc}
                 </p>
-              </a>
+              </button>
             </div>
           ))}
         </Slider>
@@ -136,8 +158,10 @@ const CoreSignals = () => {
 // ----------------------------------------------------------------------
 const TimeRoadmap = ({
   onOpenDetail,
+  onFocusEventChange,
 }: {
   onOpenDetail: (event: RoadmapDatasetEvent) => void;
+  onFocusEventChange?: (event: RoadmapDatasetEvent | null) => void;
 }) => {
   const [selected, setSelected] = useState<Date | undefined>(new Date());
   const [viewedMonth, setViewedMonth] = useState<Date>(new Date());
@@ -185,6 +209,15 @@ const TimeRoadmap = ({
                 event.date === selectedEvent.date,
             )
           : undefined;
+        const ddayDatasetEvent = ddayBaseEvent
+          ? roadmap2026.events.find(
+              (event) =>
+                event.title === ddayBaseEvent.name &&
+                event.date === ddayBaseEvent.date,
+            )
+          : undefined;
+        const detailTargetEvent = selectedDatasetEvent ?? ddayDatasetEvent;
+        onFocusEventChange?.(detailTargetEvent ?? null);
         const selectedDdayLabel = selectedDatasetEvent
           ? (() => {
               const diff = differenceInCalendarDays(
@@ -210,6 +243,7 @@ const TimeRoadmap = ({
                   mode="single"
                   selected={selected}
                   onSelect={setSelected}
+                  fixedWeeks
                   month={viewedMonth}
                   onMonthChange={setViewedMonth}
                   locale={ko}
@@ -249,10 +283,10 @@ const TimeRoadmap = ({
 
               <button
                 type="button"
-                onClick={() => selectedDatasetEvent && onOpenDetail(selectedDatasetEvent)}
-                disabled={!selectedDatasetEvent}
+                onClick={() => detailTargetEvent && onOpenDetail(detailTargetEvent)}
+                disabled={!detailTargetEvent}
                 className={`rounded-lg p-2.5 flex justify-between items-center border mt-2.5 w-full text-left ${
-                  selectedDatasetEvent
+                  detailTargetEvent
                     ? "bg-cyan-950/40 border-cyan-900/60 cursor-pointer active:scale-[0.99]"
                     : "bg-slate-800 border-slate-700 cursor-not-allowed opacity-80"
                 } transition-transform`}
@@ -304,13 +338,8 @@ const TimeRoadmap = ({
 // ----------------------------------------------------------------------
 // 4. Global Pulse Section (Draft 2)
 // ----------------------------------------------------------------------
-const GlobalPulse = () => {
-  const talk = useMemo(() => {
-    const source = roadmap2026.events ?? [];
-    if (source.length === 0) return undefined;
-    const randomEvent = source[Math.floor(Math.random() * source.length)];
-    return randomEvent.leader_talk;
-  }, []);
+const GlobalPulse = ({ focusEvent }: { focusEvent?: RoadmapDatasetEvent | null }) => {
+  const talk = focusEvent?.leader_talk;
 
   return (
     <SectionContainer title="글로벌 펄스 (리더스 톡)">
@@ -426,6 +455,8 @@ export const Draft2 = ({
   onOpenDetail: (event: RoadmapDatasetEvent) => void;
   fullBleed?: boolean;
 }) => {
+  const [focusEvent, setFocusEvent] = useState<RoadmapDatasetEvent | null>(null);
+
   return (
     <div
       className={`w-full bg-slate-950 flex flex-col relative overflow-hidden ${
@@ -440,9 +471,12 @@ export const Draft2 = ({
         </div>
       </header>
       <main className="flex-1 px-4 py-5 flex flex-col gap-6 pb-20">
-        <CoreSignals />
-        <TimeRoadmap onOpenDetail={onOpenDetail} />
-        <GlobalPulse />
+        <CoreSignals onOpenDetail={onOpenDetail} />
+        <TimeRoadmap
+          onOpenDetail={onOpenDetail}
+          onFocusEventChange={setFocusEvent}
+        />
+        <GlobalPulse focusEvent={focusEvent} />
         <LifeImpact />
       </main>
       

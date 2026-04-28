@@ -35,9 +35,9 @@ export default defineConfig({
   assetsInclude: ['**/*.svg', '**/*.csv'],
 
   server: {
-    allowedHosts: true // 모든 호스트 접속 허용
-    // allowedHosts: [
-    //   'fcf9fe1143ff7a.lhr.life' // 에러 메시지에 뜬 주소를 여기에 추가
-    // ]
+    // 1. 모든 네트워크 접속 허용
+    host: true,
+  // 어떤 도메인으로 접속하든 허용하려면 아래처럼 'true'로 두는 게 가장 편합니다.
+  allowedHosts: true
   }
 })
