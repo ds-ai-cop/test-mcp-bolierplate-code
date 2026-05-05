@@ -151,6 +151,13 @@ const CoreSignals = ({
   );
 };
 
+/** Calendar-day diff from today: future → D-n, today → D-Day, past → D+n (avoids D--n). */
+function calendarDiffToDdayLabel(diff: number): string {
+  if (diff === 0) return "D-Day";
+  if (diff > 0) return `D-${diff}`;
+  return `D+${Math.abs(diff)}`;
+}
+
 // ----------------------------------------------------------------------
 // 3. Time Roadmap Section
 // ----------------------------------------------------------------------
@@ -192,7 +199,7 @@ const TimeRoadmap = ({
           ? differenceInCalendarDays(ddayBaseEvent.dateObj, today)
           : null;
         const dynamicDdayLabel =
-          ddayDiff === null ? data.ddayLabel : ddayDiff === 0 ? "D-Day" : `D-${ddayDiff}`;
+          ddayDiff === null ? data.ddayLabel : calendarDiffToDdayLabel(ddayDiff);
         const dynamicDdayEventName = ddayBaseEvent?.name ?? data.ddayEventName;
         const dynamicDdayDate = ddayBaseEvent
           ? format(ddayBaseEvent.dateObj, "MM.dd")
@@ -217,13 +224,12 @@ const TimeRoadmap = ({
         const detailTargetEvent = selectedDatasetEvent ?? ddayDatasetEvent;
         onFocusEventChange?.(detailTargetEvent ?? null);
         const selectedDdayLabel = selectedDatasetEvent
-          ? (() => {
-              const diff = differenceInCalendarDays(
+          ? calendarDiffToDdayLabel(
+              differenceInCalendarDays(
                 parseISO(selectedDatasetEvent.date),
                 today,
-              );
-              return diff === 0 ? "D-Day" : `D-${diff}`;
-            })()
+              ),
+            )
           : dynamicDdayLabel;
 
         return (
