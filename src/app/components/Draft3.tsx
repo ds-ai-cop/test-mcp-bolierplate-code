@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { ChevronLeft, Share2, Bookmark, BarChart3, TrendingUp, Lightbulb } from "lucide-react";
+import { ChevronLeft, Share2, Bookmark, BarChart3, TrendingUp, Lightbulb, ExternalLink } from "lucide-react";
 import { differenceInCalendarDays, format, parseISO, startOfDay } from "date-fns";
 import type { RoadmapDatasetEvent } from "../types/time-roadmap";
 
@@ -114,6 +114,32 @@ export const Draft3 = ({
 
         {/* Padding Container for Contents */}
         <div className="px-5 pt-5 flex flex-col gap-5">
+          {event.linkurl && (
+            <a
+              href={event.linkurl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`rounded-lg p-3 border flex items-center justify-between transition-colors ${
+                isDarkMode
+                  ? "bg-slate-900 border-cyan-900/60 hover:bg-slate-800"
+                  : "bg-blue-50 border-blue-100 hover:bg-blue-100/60"
+              }`}
+            >
+              <div className="flex flex-col">
+                <span className={`text-[8px] font-semibold ${isDarkMode ? "text-cyan-300" : "text-blue-600"}`}>
+                  공식 컨퍼런스 페이지
+                </span>
+                <span className={`text-[9px] font-bold ${isDarkMode ? "text-slate-100" : "text-slate-900"}`}>
+                  {event.title}
+                </span>
+              </div>
+              <ExternalLink
+                size={14}
+                className={isDarkMode ? "text-cyan-300" : "text-blue-600"}
+              />
+            </a>
+          )}
+
           {/* 3. Insight & Impact Section (wf-box bg-blue-50 border-blue-300) */}
           <section
             className={`rounded-lg p-2.5 shadow-sm border ${

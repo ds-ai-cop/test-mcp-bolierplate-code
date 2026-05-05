@@ -1,159 +1,712 @@
 {
-    "events": [
-      {
-        "id": "evt_2026_01",
-        "title": "CES 2026",
-        "date": "2026-01-06",
-        "category": "Hardware / AI",
-        "theme": "상용화",
-        "linkurl": "https://www.ces.tech/",
-        "insight": {
-          "highlight_title": "AI 기반 하드웨어의 실생활 진입",
-          "highlight_text": "소비자 가전의 80% 이상에 NPU(신경망 처리 장치)가 기본 탑재될 전망입니다.",
-          "description": "라스베이거스에서 개최되는 세계 최대 IT 가전 전시회입니다. 2026년에는 모빌리티, 스마트홈, 로보틱스 전반에 걸쳐 '연결성'을 넘어선 '자율성'을 갖춘 AI 디바이스들이 대거 상용화 라인업으로 공개됩니다."
-        },
-        "trends": [
-          { 
-            "type": "동향", 
-            "title": "온디바이스 AI 가전 출하량 비중 변화",
-            "link": "https://www.ces.tech/topics/topics/automotive-self-driving-vehicles/" 
-          },
-          { 
-            "type": "리포트", 
-            "title": "차세대 모빌리티 공간 컴퓨팅 트렌드 분석",
-            "link": "https://www.sysdig.com/press-releases/2026-usage-report"
-          }
-        ],
-        "leader_talk": {
-          "speaker_name": "게리 샤피로",
-          "speaker_title": "CTA CEO",
-          "quote": "기술은 이제 우리를 연결하는 것을 넘어, 우리를 대신해 생각하고 행동하는 단계로 진입했습니다."
-        }
+  "events": [
+    {
+      "id": "evt_2026_01_ces",
+      "title": "CES 2026",
+      "date": "2026-01-06",
+      "category": "Hardware / AI",
+      "theme": "상용화",
+      "linkurl": "https://www.ces.tech/",
+      "life_impact": {
+        "automation": 10,
+        "new_jobs": 5,
+        "daily_convenience": 30,
+        "primary_driver": "일상 편의성",
+        "impact_summary": "온디바이스 AI 확산으로 생활 전반의 자동화 및 편의성 증가"
       },
-      {
-        "id": "evt_2026_03_mwc",
-        "title": "MWC Barcelona 2026",
-        "date": "2026-03-02",
-        "category": "Mobile / Cloud",
-        "theme": "PoC",
-        "linkurl": "https://www.mwcbarcelona.com/",
-        "insight": {
-          "highlight_title": "The IQ Era: 통신망의 지능화",
-          "highlight_text": "네트워크 운영의 60%가 AI를 통한 자율 제어(Autonomous Network)로 전환됩니다.",
-          "description": "바르셀로나에서 열리는 세계 최대 모바일 전시회입니다. 5G-Advanced의 성숙과 함께 6G 통신망의 기초 아키텍처가 공개되며, 통신 인프라 내부에 AI가 직접 내재화되는 'AI-Native Network' 개념 증명이 주요 화두가 됩니다."
-        },
-        "trends": [
-          { 
-            "type": "동향", 
-            "title": "글로벌 통신사의 생성형 AI 인프라 투자 규모",
-            "link": "https://www.armosec.io/blog/ai-agent-security-framework-for-cloud-environments/"
-          },
-          { 
-            "type": "논문", 
-            "title": "위성망과 지상 5G망의 하이브리드 지연시간 최적화",
-            "link": "https://arxiv.org/html/2602.22718v1" 
-          }
-        ],
-        "leader_talk": {
-          "speaker_name": "마츠 그란리드",
-          "speaker_title": "GSMA 사무총장",
-          "quote": "우리는 단순한 연결성의 시대를 지나, 네트워크 인프라 자체가 거대한 지능을 갖는 'IQ 시대'의 시작점에 서 있습니다."
-        }
+      "insight": {
+        "highlight_title": "AI 기반 하드웨어의 실생활 진입",
+        "highlight_text": "소비자 가전과 모빌리티 전반에 AI 기능이 빠르게 확산됩니다.",
+        "description": "라스베이거스에서 개최되는 세계 최대 IT 가전 전시회입니다. 2026년에는 모빌리티, 스마트홈, 로보틱스 전반에 걸쳐 연결성을 넘어선 자율성을 갖춘 AI 디바이스들이 대거 상용화 라인업으로 공개됩니다."
       },
-      {
-        "id": "evt_2026_03_gtc",
-        "title": "NVIDIA GTC 2026",
-        "date": "2026-03-16",
-        "category": "AI / Data",
-        "theme": "R&D",
-        "linkurl": "https://www.nvidia.com/gtc/",
-        "insight": {
-          "highlight_title": "AI 팩토리 아키텍처의 혁신",
-          "highlight_text": "차세대 데이터센터 인프라 설계 시 액체 냉각(Liquid Cooling) 적용 비율이 90%를 초과할 것으로 예상됩니다.",
-          "description": "새너제이에서 개최되는 글로벌 AI 컨퍼런스입니다. 블랙웰(Blackwell) 이후의 차세대 GPU 아키텍처 로드맵이 다뤄지며, 물리적 AI(로보틱스), 산업용 디지털 트윈 시스템의 최신 연구 결과가 발표됩니다."
+      "trends": [
+        {
+          "type": "기사",
+          "title": "CES 2026: 피지컬 AI로 미리 보는 미래 산업",
+          "link": "https://newneek.co/@newneek/article/37927"
         },
-        "trends": [
-          { 
-            "type": "동향", 
-            "title": "엔터프라이즈 AI 팩토리 구축 및 운영 비용 분석",
-            "link": "https://www.sysdig.com/press-releases/2026-usage-report"
-          },
-          { 
-            "type": "논문", 
-            "title": "초거대 AI 훈련을 위한 전력 효율 극대화 알고리즘",
-            "link": "https://arxiv.org/html/2602.22718v1" 
-          },
-          { 
-            "type": "리포트", 
-            "title": "휴머노이드 로봇을 위한 파운데이션 모델 생태계",
-            "link": "https://www.ces.tech/topics/topics/automotive-self-driving-vehicles/"
-          }
-        ],
-        "leader_talk": {
-          "speaker_name": "젠슨 황",
-          "speaker_title": "NVIDIA CEO",
-          "quote": "모든 산업에서 소프트웨어의 시대가 저물고, 데이터를 기반으로 스스로 학습하는 AI 팩토리의 시대가 본격화되었습니다."
+        {
+          "type": "산업분석",
+          "title": "CES 2026 산업분석 보고서",
+          "link": "https://files-scs.pstatic.net/2025/12/29/PPQr4nPhd5/CES%202026%20%EC%82%B0%EC%97%85%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C"
         }
-      },
-      {
-        "id": "evt_2026_04",
-        "title": "Google Cloud Next '26",
-        "date": "2026-04-22",
-        "category": "Cloud / Data",
-        "theme": "상용화",
-        "linkurl": "https://cloud.withgoogle.com/next",
-        "insight": {
-          "highlight_title": "자율형 클라우드 에이전트",
-          "highlight_text": "클라우드 엔지니어의 단순 리소스 할당 업무 중 75%가 AI 에이전트에 의해 자동화됩니다.",
-          "description": "라스베이거스 만달레이 베이 컨벤션 센터에서 열립니다. 버텍스 AI(Vertex AI)의 고도화와 함께 엔터프라이즈 환경에서 데이터를 스스로 분석하고 파이프라인을 구축하는 자율형 클라우드 에이전트 상용화 사례가 중점적으로 다뤄집니다."
-        },
-        "trends": [
-          { 
-            "type": "동향", 
-            "title": "서버리스 환경에서의 LLM 추론 비용 절감 사례",
-            "link": "https://arxiv.org/html/2603.06350v1" 
-          },
-          { 
-            "type": "리포트", 
-            "title": "클라우드 네이티브 보안을 위한 AI 에이전트 도입 전략",
-            "link": "https://www.armosec.io/blog/ai-agent-security-framework-for-cloud-environments/" 
-          }
-        ],
-        "leader_talk": {
-          "speaker_name": "토마스 쿠리안",
-          "speaker_title": "Google Cloud CEO",
-          "quote": "데이터가 머무는 곳에 지능을 심으십시오. 클라우드는 이제 수동적인 저장 공간이 아니라 비즈니스를 능동적으로 실행하는 주체입니다."
-        }
-      },
-      {
-        "id": "evt_2026_11",
-        "title": "AWS re:Invent 2026",
-        "date": "2026-11-30",
-        "category": "Cloud / DevOps",
-        "theme": "상용화",
-        "linkurl": "https://reinvent.awsevents.com/",
-        "insight": {
-          "highlight_title": "클라우드 운영 인프라의 완전 무인화(Zero-Ops)",
-          "highlight_text": "인프라 엔지니어의 핵심 과제가 장애 처리에서 아키텍처 재무 최적화(FinOps)로 80% 이상 이동합니다.",
-          "description": "라스베이거스에서 개최되는 대규모 클라우드 컨퍼런스입니다. 대용량 분산 시스템 아키텍처의 자율 운영 모델과 AWS의 독자적인 AI 가속기(Trainium 등) 칩셋 로드맵이 심층적으로 다뤄지며 기업의 IT 비용 효율화 방안을 제시합니다."
-        },
-        "trends": [
-          { 
-            "type": "동향", 
-            "title": "글로벌 엔터프라이즈의 서버리스 아키텍처 전환 완료율",
-            "link": "https://arxiv.org/html/2603.06350v1" 
-          },
-          { 
-            "type": "리포트", 
-            "title": "멀티 클라우드 환경의 중앙 집중형 AI 거버넌스 프레임워크",
-            "link": "https://www.redhat.com/en/blog/state-cloud-native-security-2026-maturity-gaps-and-automation-mandate" 
-          }
-        ],
-        "leader_talk": {
-          "speaker_name": "맷 가먼",
-          "speaker_title": "AWS CEO",
-          "quote": "인프라 관리에 낭비되는 리소스를 최소화하십시오. 비즈니스 로직과 차별화된 고객 경험 구축, 오직 그것만이 기업이 집중해야 할 유일한 가치입니다."
-        }
+      ],
+      "leader_talk": {
+        "speaker_name": "게리 샤피로",
+        "speaker_title": "CTA CEO",
+        "quote": "기술은 이제 우리를 연결하는 것을 넘어, 우리를 대신해 생각하고 행동하는 단계로 진입했습니다."
       }
-    ]
-  }
+    },
+    {
+      "id": "evt_2026_01_samsung_tf",
+      "title": "Samsung Tech Forum 2026",
+      "date": "2026-01-05",
+      "category": "Hardware / AI",
+      "theme": "상용화",
+      "linkurl": "https://news.samsung.com/kr/",
+      "life_impact": {
+        "automation": 15,
+        "new_jobs": 5,
+        "daily_convenience": 20,
+        "primary_driver": "일상 편의성",
+        "impact_summary": "AI 가전, 디자인, UX가 결합된 소비자 경험 강화"
+      },
+      "insight": {
+        "highlight_title": "삼성의 AI 가전·디자인 전략",
+        "highlight_text": "CES 2026 현장에서 AI, 가전, 디자인을 주제로 포럼이 열립니다.",
+        "description": "삼성전자가 CES 2026 기간 중 윈 호텔 전시관에서 운영한 기술 포럼 성격의 행사로, 소비자 AI와 디바이스 경험의 방향성을 제시합니다."
+      },
+      "trends": [
+        {
+          "type": "보도자료",
+          "title": "삼성전자 CES 2026 뉴스룸",
+          "link": "https://news.samsung.com/kr/ces-2026"
+        },
+        {
+          "type": "제품",
+          "title": "AI 가전과 스마트홈 발표",
+          "link": "https://news.samsung.com/kr"
+        }
+      ],
+      "leader_talk": {
+        "speaker_name": "삼성전자 임원진",
+        "speaker_title": "Samsung Electronics",
+        "quote": "AI는 제품의 기능을 넘어 사용자의 일상을 설계하는 핵심이 됩니다."
+      }
+    },
+    {
+      "id": "evt_2026_01_sk_hynix_ces",
+      "title": "SK hynix CES 2026 Showcase",
+      "date": "2026-01-06",
+      "category": "Semiconductor / AI",
+      "theme": "상용화",
+      "linkurl": "https://news.skhynix.co.kr/",
+      "life_impact": {
+        "automation": 20,
+        "new_jobs": 5,
+        "daily_convenience": 10,
+        "primary_driver": "업무 자동화",
+        "impact_summary": "AI 메모리 기술이 디바이스와 데이터센터 성능을 끌어올림"
+      },
+      "insight": {
+        "highlight_title": "AI 메모리의 미래",
+        "highlight_text": "CES 2026에서 차세대 AI 메모리 솔루션이 공개되었습니다.",
+        "description": "SK하이닉스가 AI 시대의 메모리 기술 로드맵과 고성능 메모리 솔루션을 전시한 행사입니다."
+      },
+      "trends": [
+        {
+          "type": "보도자료",
+          "title": "SK hynix CES 2026 뉴스룸",
+          "link": "https://news.skhynix.co.kr/"
+        },
+        {
+          "type": "제품",
+          "title": "HBM 및 AI 메모리 전략",
+          "link": "https://news.skhynix.co.kr/"
+        }
+      ],
+      "leader_talk": {
+        "speaker_name": "SK하이닉스 경영진",
+        "speaker_title": "SK hynix",
+        "quote": "AI 시대의 병목은 연산만이 아니라 메모리와 대역폭입니다."
+      }
+    },
+    {
+      "id": "evt_2026_01_aaai",
+      "title": "AAAI-26",
+      "date": "2026-01-20",
+      "category": "AI / Research",
+      "theme": "R&D",
+      "linkurl": "https://aaai.org/conference/aaai/aaai-26/",
+      "life_impact": {
+        "automation": 10,
+        "new_jobs": 10,
+        "daily_convenience": 5,
+        "primary_driver": "연구 확산",
+        "impact_summary": "최신 AI 연구 성과가 산업 적용과 에이전트 설계로 이어짐"
+      },
+      "insight": {
+        "highlight_title": "대표 AI 학술 연구의 상용화 전 단계",
+        "highlight_text": "기초 연구, 추론, 에이전트, 멀티모달 모델의 최신 흐름이 집중 논의됩니다.",
+        "description": "세계적 권위의 AI 학술 컨퍼런스로, 새로운 알고리즘과 평가 방법론이 소개되는 대표적인 연구 중심 행사입니다."
+      },
+      "trends": [
+        {
+          "type": "세션",
+          "title": "AAAI-26 프로그램과 주요 트랙",
+          "link": "https://aaai.org/conference/aaai/aaai-26/"
+        },
+        {
+          "type": "학회",
+          "title": "AAAI 공식 학회 안내",
+          "link": "https://aaai.org/"
+        }
+      ],
+      "leader_talk": {
+        "speaker_name": "기조연설자",
+        "speaker_title": "AAAI 조직위원회",
+        "quote": "AI의 다음 단계는 더 큰 모델이 아니라 더 신뢰할 수 있는 추론과 행동입니다."
+      }
+    },
+    {
+      "id": "evt_2026_02_microsoft_build",
+      "title": "Microsoft Build 2026",
+      "date": "2026-02-17",
+      "category": "AI / Developer Platform",
+      "theme": "상용화",
+      "linkurl": "https://build.microsoft.com/",
+      "life_impact": {
+        "automation": 25,
+        "new_jobs": 8,
+        "daily_convenience": 10,
+        "primary_driver": "업무 자동화",
+        "impact_summary": "개발자 생산성과 AI 코파일럿 기반 업무 자동화가 확대"
+      },
+      "insight": {
+        "highlight_title": "AI 코파일럿과 개발 플랫폼",
+        "highlight_text": "클라우드, 개발도구, 에이전트형 워크플로우가 중심입니다.",
+        "description": "Microsoft 생태계 전반의 개발자 행사로, Copilot, Azure AI, 업무 자동화가 핵심 주제입니다."
+      },
+      "trends": [
+        {
+          "type": "세션",
+          "title": "Microsoft Build 2026 세션 목록",
+          "link": "https://build.microsoft.com/en-US/sessions"
+        },
+        {
+          "type": "발표",
+          "title": "Azure AI 및 Copilot 업데이트",
+          "link": "https://blogs.microsoft.com/"
+        }
+      ],
+      "leader_talk": {
+        "speaker_name": "사티아 나델라",
+        "speaker_title": "Microsoft CEO",
+        "quote": "소프트웨어 개발은 이제 AI와 사람이 함께 수행하는 협업의 문제입니다."
+      }
+    },
+    {
+      "id": "evt_2026_03_mwc",
+      "title": "MWC Barcelona 2026",
+      "date": "2026-03-02",
+      "category": "Mobile / Cloud",
+      "theme": "PoC",
+      "linkurl": "https://www.mwcbarcelona.com/",
+      "life_impact": {
+        "automation": 15,
+        "new_jobs": 10,
+        "daily_convenience": 10,
+        "primary_driver": "업무 자동화",
+        "impact_summary": "AI 네트워크로 산업 전반 자동화 속도 증가"
+      },
+      "insight": {
+        "highlight_title": "The IQ Era: 통신망의 지능화",
+        "highlight_text": "네트워크 운영의 60%가 AI를 통한 자율 제어로 전환됩니다.",
+        "description": "바르셀로나에서 열리는 세계 최대 모바일 전시회입니다. 5G-Advanced의 성숙과 함께 6G 통신망의 기초 아키텍처가 공개되며, 통신 인프라 내부에 AI가 직접 내재화되는 AI-Native Network 개념 증명이 주요 화두가 됩니다."
+      },
+      "trends": [
+        {
+          "type": "세션",
+          "title": "MWC Barcelona 2026 공식 아젠다",
+          "link": "https://www.mwcbarcelona.com/agenda"
+        },
+        {
+          "type": "리포트",
+          "title": "6G와 AI 네트워크 트렌드",
+          "link": "https://www.gsma.com/newsroom/"
+        }
+      ],
+      "leader_talk": {
+        "speaker_name": "마츠 그란리드",
+        "speaker_title": "GSMA 사무총장",
+        "quote": "우리는 단순한 연결성의 시대를 지나, 네트워크 인프라 자체가 거대한 지능을 갖는 IQ 시대의 시작점에 서 있습니다."
+      }
+    },
+    {
+      "id": "evt_2026_03_gtc",
+      "title": "NVIDIA GTC 2026",
+      "date": "2026-03-16",
+      "category": "AI / Data",
+      "theme": "R&D",
+      "linkurl": "https://www.nvidia.com/gtc/",
+      "life_impact": {
+        "automation": 20,
+        "new_jobs": 10,
+        "daily_convenience": 5,
+        "primary_driver": "업무 자동화",
+        "impact_summary": "AI 인프라 발전으로 자동화의 기술적 기반 강화"
+      },
+      "insight": {
+        "highlight_title": "AI 팩토리 아키텍처의 혁신",
+        "highlight_text": "차세대 데이터센터 인프라 설계 시 액체 냉각 적용 비율이 90%를 초과할 것으로 예상됩니다.",
+        "description": "새너제이에서 개최되는 글로벌 AI 컨퍼런스입니다. 블랙웰 이후의 차세대 GPU 아키텍처 로드맵이 다뤄지며, 물리적 AI, 로보틱스, 산업용 디지털 트윈 시스템의 최신 연구 결과가 발표됩니다."
+      },
+      "trends": [
+        {
+          "type": "세션",
+          "title": "GTC 2026 세션 일정",
+          "link": "https://www.nvidia.com/gtc/session-catalog/"
+        },
+        {
+          "type": "블로그",
+          "title": "NVIDIA GTC 발표 및 인사이트",
+          "link": "https://blogs.nvidia.com/"
+        },
+        {
+          "type": "자료",
+          "title": "NVIDIA 개발자 리소스",
+          "link": "https://developer.nvidia.com/gtc"
+        }
+      ],
+      "leader_talk": {
+        "speaker_name": "젠슨 황",
+        "speaker_title": "NVIDIA CEO",
+        "quote": "모든 산업에서 소프트웨어의 시대가 저물고, 데이터를 기반으로 스스로 학습하는 AI 팩토리의 시대가 본격화되었습니다."
+      }
+    },
+    {
+      "id": "evt_2026_03_ai_auto_korea",
+      "title": "AI자율제조혁신 컨퍼런스 2026",
+      "date": "2026-03-04",
+      "category": "Industrial AI",
+      "theme": "상용화",
+      "linkurl": "https://www.amws.co.kr/2026/kor/index.html",
+      "life_impact": {
+        "automation": 30,
+        "new_jobs": 8,
+        "daily_convenience": 5,
+        "primary_driver": "업무 자동화",
+        "impact_summary": "제조업 현장의 AI 전환과 자율공정 도입이 확산"
+      },
+      "insight": {
+        "highlight_title": "제조 AI의 현장 적용",
+        "highlight_text": "스마트팩토리와 연계된 자율제조 사례가 집중적으로 공개됩니다.",
+        "description": "국내 제조 및 자동화 분야의 대표 행사로, 생산라인 최적화, 예지보전, 품질관리 자동화가 핵심입니다."
+      },
+      "trends": [
+        {
+          "type": "행사",
+          "title": "AI 자율제조혁신 컨퍼런스 안내",
+          "link": "https://www.amws.co.kr/2026/kor/index.html"
+        },
+        {
+          "type": "산업",
+          "title": "스마트팩토리 관련 산업 동향",
+          "link": "https://www.amws.co.kr/"
+        }
+      ],
+      "leader_talk": {
+        "speaker_name": "기조연설자",
+        "speaker_title": "산업계 리더",
+        "quote": "제조 경쟁력은 속도가 아니라 자율화 수준에서 결정됩니다."
+      }
+    },
+    {
+      "id": "evt_2026_03_sk_hynix_mwc",
+      "title": "SK hynix at MWC 2026",
+      "date": "2026-03-02",
+      "category": "Semiconductor / AI",
+      "theme": "상용화",
+      "linkurl": "https://news.skhynix.co.kr/mwc-2026/",
+      "life_impact": {
+        "automation": 20,
+        "new_jobs": 5,
+        "daily_convenience": 10,
+        "primary_driver": "업무 자동화",
+        "impact_summary": "AI 메모리와 온디바이스, 자동차 전장용 메모리 전략이 확대"
+      },
+      "insight": {
+        "highlight_title": "AI 메모리 솔루션 공개",
+        "highlight_text": "MWC 2026에서 최신 AI 메모리 솔루션과 파트너 협업을 소개했습니다.",
+        "description": "모바일과 네트워크 행사에 반도체 관점의 AI 메모리 전략이 결합되는 사례입니다."
+      },
+      "trends": [
+        {
+          "type": "보도자료",
+          "title": "SK hynix MWC 2026 뉴스룸",
+          "link": "https://news.skhynix.co.kr/mwc-2026/"
+        },
+        {
+          "type": "기술",
+          "title": "AI 인프라용 메모리 기술",
+          "link": "https://news.skhynix.co.kr/"
+        }
+      ],
+      "leader_talk": {
+        "speaker_name": "SK하이닉스 경영진",
+        "speaker_title": "SK hynix",
+        "quote": "AI 시대의 성능 경쟁은 메모리 혁신에서 갈립니다."
+      }
+    },
+    {
+      "id": "evt_2026_04_google_cloud_next",
+      "title": "Google Cloud Next '26",
+      "date": "2026-04-22",
+      "category": "Cloud / Data",
+      "theme": "상용화",
+      "linkurl": "https://cloud.withgoogle.com/next",
+      "life_impact": {
+        "automation": 20,
+        "new_jobs": 5,
+        "daily_convenience": 10,
+        "primary_driver": "업무 자동화",
+        "impact_summary": "자율형 클라우드 에이전트로 지식 노동 자동화"
+      },
+      "insight": {
+        "highlight_title": "자율형 클라우드 에이전트",
+        "highlight_text": "클라우드 엔지니어의 단순 리소스 할당 업무 중 75%가 AI 에이전트에 의해 자동화됩니다.",
+        "description": "라스베이거스 만달레이 베이 컨벤션 센터에서 열립니다. 버텍스 AI의 고도화와 함께 엔터프라이즈 환경에서 데이터를 스스로 분석하고 파이프라인을 구축하는 자율형 클라우드 에이전트 상용화 사례가 중점적으로 다뤄집니다."
+      },
+      "trends": [
+        {
+          "type": "세션",
+          "title": "Google Cloud Next 2026 세션",
+          "link": "https://cloud.withgoogle.com/next/agenda"
+        },
+        {
+          "type": "블로그",
+          "title": "Google Cloud AI 및 Vertex AI 발표",
+          "link": "https://cloud.google.com/blog"
+        }
+      ],
+      "leader_talk": {
+        "speaker_name": "토마스 쿠리안",
+        "speaker_title": "Google Cloud CEO",
+        "quote": "데이터가 머무는 곳에 지능을 심으십시오. 클라우드는 이제 수동적인 저장 공간이 아니라 비즈니스를 능동적으로 실행하는 주체입니다."
+      }
+    },
+    {
+      "id": "evt_2026_04_humanx",
+      "title": "HumanX 2026",
+      "date": "2026-04-06",
+      "category": "AI / Product",
+      "theme": "PoC",
+      "linkurl": "https://www.humanx.co/",
+      "life_impact": {
+        "automation": 15,
+        "new_jobs": 10,
+        "daily_convenience": 10,
+        "primary_driver": "업무 자동화",
+        "impact_summary": "AI 의사결정과 제품 운영의 연결이 강화"
+      },
+      "insight": {
+        "highlight_title": "AI 의사결정자를 위한 컨퍼런스",
+        "highlight_text": "기업 내 AI 도입, 운영, 거버넌스를 실무 중심으로 다룹니다.",
+        "description": "AI 제품 전략, 운영 체계, 조직 내 도입 방식이 중심이 되는 행사입니다."
+      },
+      "trends": [
+        {
+          "type": "아젠다",
+          "title": "HumanX 2026 프로그램",
+          "link": "https://www.humanx.co/"
+        },
+        {
+          "type": "세션",
+          "title": "AI 운영과 거버넌스 트랙",
+          "link": "https://www.humanx.co/"
+        }
+      ],
+      "leader_talk": {
+        "speaker_name": "기조연설자",
+        "speaker_title": "HumanX 운영진",
+        "quote": "AI는 이제 실험이 아니라 조직 운영의 핵심 시스템입니다."
+      }
+    },
+    {
+      "id": "evt_2026_04_aim",
+      "title": "AIM-2026",
+      "date": "2026-04-27",
+      "category": "AI / ML",
+      "theme": "R&D",
+      "linkurl": "https://artificialintelligence.unitedscientificgroup.org/",
+      "life_impact": {
+        "automation": 10,
+        "new_jobs": 10,
+        "daily_convenience": 5,
+        "primary_driver": "연구 확산",
+        "impact_summary": "머신러닝과 데이터 사이언스 연구 성과가 산업 적용으로 이어짐"
+      },
+      "insight": {
+        "highlight_title": "AI와 ML의 국제 학술 논의",
+        "highlight_text": "데이터 사이언스, AI, ML 최신 연구 주제가 폭넓게 발표됩니다.",
+        "description": "국제 학술대회 성격의 행사로, 연구자와 실무자가 함께 최신 방법론을 논의합니다."
+      },
+      "trends": [
+        {
+          "type": "행사",
+          "title": "AIM-2026 공식 사이트",
+          "link": "https://artificialintelligence.unitedscientificgroup.org/"
+        },
+        {
+          "type": "학술",
+          "title": "AI/ML 국제 학술 발표 자료",
+          "link": "https://www.springer.com/"
+        }
+      ],
+      "leader_talk": {
+        "speaker_name": "기조연설자",
+        "speaker_title": "학술위원회",
+        "quote": "혁신은 실험실에서 시작해 산업 전반으로 퍼집니다."
+      }
+    },
+    {
+      "id": "evt_2026_05_06_ai_expo",
+      "title": "AI EXPO KOREA 2026",
+      "date": "2026-05-06",
+      "category": "AI / Enterprise",
+      "theme": "상용화",
+      "linkurl": "https://www.aiexpo.co.kr/home/v1.php?s=31",
+      "life_impact": {
+        "automation": 20,
+        "new_jobs": 5,
+        "daily_convenience": 15,
+        "primary_driver": "업무 자동화",
+        "impact_summary": "국내 AI 기술과 솔루션의 실전 도입이 확대"
+      },
+      "insight": {
+        "highlight_title": "국내 최대 단일 AI 행사",
+        "highlight_text": "서울 코엑스에서 열리는 대규모 AI 전시 및 컨퍼런스입니다.",
+        "description": "국내 AI 공급기업과 수요기업이 한자리에 모여 산업 적용 사례와 솔루션을 선보입니다."
+      },
+      "trends": [
+        {
+          "type": "아젠다",
+          "title": "AI EXPO KOREA 2026 행사 안내",
+          "link": "https://www.aiexpo.co.kr/home/v1.php?s=31"
+        },
+        {
+          "type": "전시",
+          "title": "AI 솔루션 및 산업 적용 사례",
+          "link": "https://www.aiexpo.co.kr/"
+        }
+      ],
+      "leader_talk": {
+        "speaker_name": "주최 측 대표",
+        "speaker_title": "AI EXPO KOREA",
+        "quote": "AI는 더 이상 전시 기술이 아니라 현장에서 검증되는 비즈니스 인프라입니다."
+      }
+    },
+    {
+      "id": "evt_2026_05_google_io",
+      "title": "Google I/O 2026",
+      "date": "2026-05-19",
+      "category": "AI / Developer Platform",
+      "theme": "상용화",
+      "linkurl": "https://io.google/",
+      "life_impact": {
+        "automation": 20,
+        "new_jobs": 8,
+        "daily_convenience": 10,
+        "primary_driver": "업무 자동화",
+        "impact_summary": "모바일·웹·클라우드 전반에 AI 기능이 기본 내장"
+      },
+      "insight": {
+        "highlight_title": "플랫폼 전반의 AI 기본화",
+        "highlight_text": "검색, 안드로이드, 개발자 도구, 제미나이 계열 업데이트가 핵심입니다.",
+        "description": "구글 생태계의 핵심 개발자 컨퍼런스로, AI 기능이 제품과 플랫폼에 어떻게 기본 탑재되는지 보여주는 행사입니다."
+      },
+      "trends": [
+        {
+          "type": "세션",
+          "title": "Google I/O 2026 세션 안내",
+          "link": "https://io.google/2026/"
+        },
+        {
+          "type": "블로그",
+          "title": "Google AI 및 Android 업데이트",
+          "link": "https://blog.google/"
+        }
+      ],
+      "leader_talk": {
+        "speaker_name": "순다르 피차이",
+        "speaker_title": "Google CEO",
+        "quote": "AI는 제품의 일부가 아니라 제품 그 자체가 되고 있습니다."
+      }
+    },
+    {
+      "id": "evt_2026_06_apple_wwdc",
+      "title": "Apple WWDC 2026",
+      "date": "2026-06-08",
+      "category": "Hardware / Software",
+      "theme": "상용화",
+      "linkurl": "https://developer.apple.com/wwdc/",
+      "life_impact": {
+        "automation": 15,
+        "new_jobs": 5,
+        "daily_convenience": 20,
+        "primary_driver": "일상 편의성",
+        "impact_summary": "OS와 디바이스 레벨의 개인화 및 온디바이스 AI 강화"
+      },
+      "insight": {
+        "highlight_title": "OS 레벨 AI 통합",
+        "highlight_text": "아이폰, 맥, 아이패드에서 AI 기능이 깊이 통합되는 방향이 중요합니다.",
+        "description": "애플의 개발자 컨퍼런스로, 운영체제와 디바이스 경험이 어떻게 재설계되는지 보여줍니다."
+      },
+      "trends": [
+        {
+          "type": "세션",
+          "title": "WWDC 2026 세션 및 플랫폼 가이드",
+          "link": "https://developer.apple.com/wwdc26/"
+        },
+        {
+          "type": "문서",
+          "title": "Apple Developer 뉴스",
+          "link": "https://developer.apple.com/news/"
+        }
+      ],
+      "leader_talk": {
+        "speaker_name": "팀 쿡",
+        "speaker_title": "Apple CEO",
+        "quote": "가장 좋은 AI는 사용자가 느끼지 못할 정도로 자연스럽게 스며드는 기술입니다."
+      }
+    },
+    {
+      "id": "evt_2026_06_meta_connect",
+      "title": "Meta Connect 2026",
+      "date": "2026-06-16",
+      "category": "XR / AI",
+      "theme": "PoC",
+      "linkurl": "https://www.meta.com/connect/",
+      "life_impact": {
+        "automation": 10,
+        "new_jobs": 10,
+        "daily_convenience": 10,
+        "primary_driver": "일상 편의성",
+        "impact_summary": "공간컴퓨팅과 AI 비서의 결합이 일상 인터페이스를 변화"
+      },
+      "insight": {
+        "highlight_title": "XR과 AI의 결합",
+        "highlight_text": "웨어러블, 공간컴퓨팅, AI 비서의 통합이 핵심입니다.",
+        "description": "메타의 대표 개발자 행사로, 차세대 AR/VR 및 AI 기반 인터페이스 방향성이 공개됩니다."
+      },
+      "trends": [
+        {
+          "type": "세션",
+          "title": "Meta Connect 발표 및 세션",
+          "link": "https://www.meta.com/connect/"
+        },
+        {
+          "type": "뉴스룸",
+          "title": "Meta Reality Labs 발표",
+          "link": "https://about.fb.com/news/"
+        }
+      ],
+      "leader_talk": {
+        "speaker_name": "마크 저커버그",
+        "speaker_title": "Meta CEO",
+        "quote": "다음 컴퓨팅 플랫폼은 화면이 아니라 공간이 될 것입니다."
+      }
+    },
+    {
+      "id": "evt_2026_06_lg_awe",
+      "title": "LG at AWE 2026",
+      "date": "2026-03-12",
+      "category": "Hardware / Smart Home",
+      "theme": "상용화",
+      "linkurl": "https://www.lg.com/kr",
+      "life_impact": {
+        "automation": 20,
+        "new_jobs": 5,
+        "daily_convenience": 25,
+        "primary_driver": "일상 편의성",
+        "impact_summary": "스마트홈과 AI 가전의 현지화 및 플랫폼 통합이 강화"
+      },
+      "insight": {
+        "highlight_title": "LG 씽큐 홈과 AI 가전",
+        "highlight_text": "중국 최대 가전 전시회 AWE 2026에서 스마트홈 플랫폼을 선보였습니다.",
+        "description": "LG전자의 가전·스마트홈 전략이 글로벌 전시회에서 구체화된 사례입니다."
+      },
+      "trends": [
+        {
+          "type": "보도자료",
+          "title": "LG전자 뉴스룸",
+          "link": "https://www.lg.com/global/press-release"
+        },
+        {
+          "type": "제품",
+          "title": "LG ThinQ 및 스마트홈 전략",
+          "link": "https://www.lg.com/kr/"
+        }
+      ],
+      "leader_talk": {
+        "speaker_name": "LG전자 관계자",
+        "speaker_title": "LG Electronics",
+        "quote": "가전은 이제 연결을 넘어 집 전체를 이해하고 조율하는 지능형 플랫폼입니다."
+      }
+    },
+    {
+      "id": "evt_2026_08_ai_summit_seoul",
+      "title": "AI Summit Seoul & Expo 2026",
+      "date": "2026-08-19",
+      "category": "AI / Enterprise",
+      "theme": "상용화",
+      "linkurl": "https://www.aisummit.co.kr",
+      "life_impact": {
+        "automation": 20,
+        "new_jobs": 5,
+        "daily_convenience": 10,
+        "primary_driver": "업무 자동화",
+        "impact_summary": "기업용 AI 도입과 적용 사례가 빠르게 확산"
+      },
+      "insight": {
+        "highlight_title": "기업용 AI의 운영 최적화",
+        "highlight_text": "컨퍼런스와 전시가 결합된 형태로, 산업별 AI 활용 전략을 집중 조명합니다.",
+        "description": "서울 코엑스에서 열리는 국내 대표 AI 행사 중 하나로, 실무 적용과 비즈니스 파트너링에 강점이 있습니다."
+      },
+      "trends": [
+        {
+          "type": "아젠다",
+          "title": "AI Summit Seoul 2026 프로그램",
+          "link": "https://www.aisummit.co.kr/"
+        },
+        {
+          "type": "행사",
+          "title": "AI Summit Seoul 전시 및 파트너링",
+          "link": "https://www.aisummit.co.kr/"
+        }
+      ],
+      "leader_talk": {
+        "speaker_name": "기조연설자",
+        "speaker_title": "AI Summit Seoul",
+        "quote": "기업의 AI 경쟁력은 모델보다 운영 방식에서 갈립니다."
+      }
+    },
+    {
+      "id": "evt_2026_11_reinvent",
+      "title": "AWS re:Invent 2026",
+      "date": "2026-11-30",
+      "category": "Cloud / DevOps",
+      "theme": "상용화",
+      "linkurl": "https://reinvent.awsevents.com/",
+      "life_impact": {
+        "automation": 25,
+        "new_jobs": 5,
+        "daily_convenience": 5,
+        "primary_driver": "업무 자동화",
+        "impact_summary": "Zero-Ops 기반 인프라 자동화 및 직무 구조 재편"
+      },
+      "insight": {
+        "highlight_title": "클라우드 운영 인프라의 완전 무인화",
+        "highlight_text": "인프라 엔지니어의 핵심 과제가 장애 처리에서 아키텍처 재무 최적화로 이동합니다.",
+        "description": "라스베이거스에서 개최되는 대규모 클라우드 컨퍼런스입니다. 대용량 분산 시스템 아키텍처의 자율 운영 모델과 AWS의 독자적인 AI 가속기 칩셋 로드맵이 심층적으로 다뤄집니다."
+      },
+      "trends": [
+        {
+          "type": "세션",
+          "title": "AWS re:Invent 세션 캘린더",
+          "link": "https://reinvent.awsevents.com/session-catalog/"
+        },
+        {
+          "type": "블로그",
+          "title": "AWS 뉴스룸 및 발표",
+          "link": "https://aws.amazon.com/blogs/aws/"
+        }
+      ],
+      "leader_talk": {
+        "speaker_name": "맷 가먼",
+        "speaker_title": "AWS CEO",
+        "quote": "인프라 관리에 낭비되는 리소스를 최소화하십시오. 비즈니스 로직과 차별화된 고객 경험 구축, 오직 그것만이 기업이 집중해야 할 유일한 가치입니다."
+      }
+    }
+  ]
+}

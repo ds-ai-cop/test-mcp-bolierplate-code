@@ -370,11 +370,43 @@ const GlobalPulse = ({ focusEvent }: { focusEvent?: RoadmapDatasetEvent | null }
 // ----------------------------------------------------------------------
 // 5. Life Impact Section
 // ----------------------------------------------------------------------
-const LifeImpact = () => {
+const LifeImpact = ({ focusEvent }: { focusEvent?: RoadmapDatasetEvent | null }) => {
+  const impact = (roadmap2026.events ?? []).reduce(
+    (acc, event: any) => {
+      const lifeImpact = event.life_impact ?? {};
+      return {
+        automation: acc.automation + (lifeImpact.automation ?? 0),
+        new_jobs: acc.new_jobs + (lifeImpact.new_jobs ?? 0),
+        daily_convenience: acc.daily_convenience + (lifeImpact.daily_convenience ?? 0),
+      };
+    },
+    { automation: 0, new_jobs: 0, daily_convenience: 0 },
+  );
+  const focusedImpact = (focusEvent as any)?.life_impact;
+  const effectiveImpact = focusedImpact
+    ? {
+        automation: focusedImpact.automation ?? impact.automation,
+        new_jobs: focusedImpact.new_jobs ?? impact.new_jobs,
+        daily_convenience:
+          focusedImpact.daily_convenience ?? impact.daily_convenience,
+      }
+    : impact;
   const data = [
-    { name: "업무 자동화율", value: 75, fill: "#94a3b8" },
-    { name: "신규 직업창출", value: 35, fill: "#cbd5e1" },
-    { name: "일상 편의성", value: 92, fill: "#3b82f6" },
+    {
+      name: "업무 자동화율",
+      value: effectiveImpact.automation || 75,
+      fill: "#94a3b8",
+    },
+    {
+      name: "신규 직업창출",
+      value: effectiveImpact.new_jobs || 35,
+      fill: "#cbd5e1",
+    },
+    {
+      name: "일상 편의성",
+      value: effectiveImpact.daily_convenience || 92,
+      fill: "#3b82f6",
+    },
   ];
 
   return (
@@ -471,7 +503,7 @@ export const Draft1 = ({
           onFocusEventChange={setFocusEvent}
         />
         <GlobalPulse focusEvent={focusEvent} />
-        <LifeImpact />
+        <LifeImpact focusEvent={focusEvent} />
       </main>
       
       {/* Global & Third-Party CSS Overrides for Draft 1 */}
