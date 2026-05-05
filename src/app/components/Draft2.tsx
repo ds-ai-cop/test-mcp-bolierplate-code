@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import { MoreVertical } from "lucide-react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -166,15 +166,20 @@ function calendarDiffToDdayLabel(diff: number): string {
 const TimeRoadmap = ({
   onOpenDetail,
   onFocusEventChange,
+  calendarSelected,
+  onCalendarSelectedChange,
+  calendarMonth,
+  onCalendarMonthChange,
 }: {
   onOpenDetail: (event: RoadmapDatasetEvent) => void;
   onFocusEventChange?: (event: RoadmapDatasetEvent | null) => void;
+  calendarSelected: Date | undefined;
+  onCalendarSelectedChange: (date: Date | undefined) => void;
+  calendarMonth: Date;
+  onCalendarMonthChange: (month: Date) => void;
 }) => {
-  const [selected, setSelected] = useState<Date | undefined>(new Date());
-  const [viewedMonth, setViewedMonth] = useState<Date>(new Date());
-
   return (
-    <GeminiTimeRoadmapConnector targetYear={viewedMonth.getFullYear()}>
+    <GeminiTimeRoadmapConnector targetYear={calendarMonth.getFullYear()}>
       {({ data, loading, error }) => {
         const events = data.events.map((event) => ({
           ...event,
@@ -206,8 +211,8 @@ const TimeRoadmap = ({
         const dynamicDdayDate = ddayBaseEvent
           ? format(ddayBaseEvent.dateObj, "MM.dd")
           : data.ddayDate;
-        const selectedEvent = selected
-          ? events.find((event) => isSameDay(event.dateObj, selected))
+        const selectedEvent = calendarSelected
+          ? events.find((event) => isSameDay(event.dateObj, calendarSelected))
           : undefined;
         const selectedDatasetEvent = selectedEvent
           ? roadmap2026.events.find(
@@ -247,11 +252,11 @@ const TimeRoadmap = ({
               <div className="mb-2.5">
                 <DayPicker
                   mode="single"
-                  selected={selected}
-                  onSelect={setSelected}
+                  selected={calendarSelected}
+                  onSelect={onCalendarSelectedChange}
                   fixedWeeks
-                  month={viewedMonth}
-                  onMonthChange={setViewedMonth}
+                  month={calendarMonth}
+                  onMonthChange={onCalendarMonthChange}
                   locale={ko}
                   formatters={{
                     formatCaption: (month) => format(month, "yyyy.MM"),
@@ -313,7 +318,9 @@ const TimeRoadmap = ({
               <div className="mt-2 rounded-md bg-slate-800 px-2 py-1.5 text-[8px] text-slate-300">
                 {" "}
                 <span className="font-semibold">
-                  {selected ? format(selected, "yyyy.MM.dd") : "없음"}
+                  {calendarSelected
+                    ? format(calendarSelected, "yyyy.MM.dd")
+                    : "없음"}
                 </span>
                 {selectedEvent && (
                   <span className="ml-1.5 text-cyan-300 font-semibold">
@@ -489,12 +496,22 @@ const LifeImpact = ({ focusEvent }: { focusEvent?: RoadmapDatasetEvent | null })
 export const Draft2 = ({
   onOpenDetail,
   fullBleed = false,
+  calendarSelected,
+  onCalendarSelectedChange,
+  calendarMonth,
+  onCalendarMonthChange,
+  focusEvent,
+  onFocusEventChange,
 }: {
   onOpenDetail: (event: RoadmapDatasetEvent) => void;
   fullBleed?: boolean;
+  calendarSelected: Date | undefined;
+  onCalendarSelectedChange: (date: Date | undefined) => void;
+  calendarMonth: Date;
+  onCalendarMonthChange: (month: Date) => void;
+  focusEvent: RoadmapDatasetEvent | null;
+  onFocusEventChange: (event: RoadmapDatasetEvent | null) => void;
 }) => {
-  const [focusEvent, setFocusEvent] = useState<RoadmapDatasetEvent | null>(null);
-
   return (
     <div
       className={`w-full bg-slate-950 flex flex-col relative overflow-hidden ${
@@ -512,7 +529,11 @@ export const Draft2 = ({
         <CoreSignals onOpenDetail={onOpenDetail} />
         <TimeRoadmap
           onOpenDetail={onOpenDetail}
-          onFocusEventChange={setFocusEvent}
+          onFocusEventChange={onFocusEventChange}
+          calendarSelected={calendarSelected}
+          onCalendarSelectedChange={onCalendarSelectedChange}
+          calendarMonth={calendarMonth}
+          onCalendarMonthChange={onCalendarMonthChange}
         />
         <GlobalPulse focusEvent={focusEvent} />
         <LifeImpact focusEvent={focusEvent} />
