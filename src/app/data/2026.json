@@ -26,9 +26,9 @@
           "link": "https://newneek.co/@newneek/article/37927"
         },
         {
-          "type": "산업분석",
-          "title": "CES 2026 산업분석 보고서",
-          "link": "https://files-scs.pstatic.net/2025/12/29/PPQr4nPhd5/CES%202026%20%EC%82%B0%EC%97%85%EB%B6%84%EC%84%9D%EB%B3%B4%EA%B3%A0%EC%84%9C"
+          "type": "뉴스룸",
+          "title": "CES 2026 공식 미디어 발표 자료",
+          "link": "https://www.ces.tech/about-ces/media-resources.aspx"
         }
       ],
       "leader_talk": {
@@ -59,13 +59,13 @@
       "trends": [
         {
           "type": "보도자료",
-          "title": "삼성전자 CES 2026 뉴스룸",
-          "link": "https://news.samsung.com/kr/ces-2026"
+          "title": "삼성전자 CES 2026 프레스킷",
+          "link": "https://news.samsung.com/kr/tag/ces-2026"
         },
         {
-          "type": "제품",
-          "title": "AI 가전과 스마트홈 발표",
-          "link": "https://news.samsung.com/kr"
+          "type": "디자인",
+          "title": "삼성 AI 비전 및 디자인 철학",
+          "link": "https://design.samsung.com/kr/contents/vision/"
         }
       ],
       "leader_talk": {
@@ -95,14 +95,14 @@
       },
       "trends": [
         {
-          "type": "보도자료",
-          "title": "SK hynix CES 2026 뉴스룸",
-          "link": "https://news.skhynix.co.kr/"
+          "type": "기술블로그",
+          "title": "HBM4 및 차세대 메모리 로드맵",
+          "link": "https://news.skhynix.co.kr/technology"
         },
         {
-          "type": "제품",
-          "title": "HBM 및 AI 메모리 전략",
-          "link": "https://news.skhynix.co.kr/"
+          "type": "인터뷰",
+          "title": "SK하이닉스 AI 인프라 전략 인터뷰",
+          "link": "https://news.skhynix.co.kr/interview"
         }
       ],
       "leader_talk": {
@@ -132,14 +132,14 @@
       },
       "trends": [
         {
-          "type": "세션",
-          "title": "AAAI-26 프로그램과 주요 트랙",
-          "link": "https://aaai.org/conference/aaai/aaai-26/"
+          "type": "논문",
+          "title": "AAAI-26 채택 논문 리스트",
+          "link": "https://aaai.org/conference/aaai/aaai-26/accepted-papers/"
         },
         {
-          "type": "학회",
-          "title": "AAAI 공식 학회 안내",
-          "link": "https://aaai.org/"
+          "type": "워크숍",
+          "title": "AI 에이전트 및 추론 워크숍 안내",
+          "link": "https://aaai.org/conference/aaai/aaai-26/workshops/"
         }
       ],
       "leader_talk": {
@@ -169,14 +169,14 @@
       },
       "trends": [
         {
-          "type": "세션",
-          "title": "Microsoft Build 2026 세션 목록",
-          "link": "https://build.microsoft.com/en-US/sessions"
+          "type": "개발문서",
+          "title": "Azure AI 개발자 가이드",
+          "link": "https://learn.microsoft.com/en-us/azure/ai-services/"
         },
         {
-          "type": "발표",
-          "title": "Azure AI 및 Copilot 업데이트",
-          "link": "https://blogs.microsoft.com/"
+          "type": "블로그",
+          "title": "Build 2026 공식 기술 블로그 요약",
+          "link": "https://devblogs.microsoft.com/search?query=Build+2026"
         }
       ],
       "leader_talk": {
@@ -206,14 +206,14 @@
       },
       "trends": [
         {
-          "type": "세션",
-          "title": "MWC Barcelona 2026 공식 아젠다",
-          "link": "https://www.mwcbarcelona.com/agenda"
+          "type": "뉴스레터",
+          "title": "GSMA Intelligence 리포트",
+          "link": "https://www.gsmaintelligence.com/research/"
         },
         {
-          "type": "리포트",
-          "title": "6G와 AI 네트워크 트렌드",
-          "link": "https://www.gsma.com/newsroom/"
+          "type": "비디오",
+          "title": "MWC 2026 핵심 세션 다시보기",
+          "link": "https://www.mwcbarcelona.com/mwc-broadcasting"
         }
       ],
       "leader_talk": {
@@ -243,19 +243,14 @@
       },
       "trends": [
         {
-          "type": "세션",
-          "title": "GTC 2026 세션 일정",
-          "link": "https://www.nvidia.com/gtc/session-catalog/"
+          "type": "딥러닝",
+          "title": "NVIDIA Deep Learning Institute",
+          "link": "https://www.nvidia.com/en-us/training/"
         },
         {
-          "type": "블로그",
-          "title": "NVIDIA GTC 발표 및 인사이트",
-          "link": "https://blogs.nvidia.com/"
-        },
-        {
-          "type": "자료",
-          "title": "NVIDIA 개발자 리소스",
-          "link": "https://developer.nvidia.com/gtc"
+          "type": "기술문서",
+          "title": "차세대 GPU 아키텍처 화이트페이퍼",
+          "link": "https://www.nvidia.com/en-us/data-center/resources/"
         }
       ],
       "leader_talk": {
@@ -285,57 +280,20 @@
       },
       "trends": [
         {
-          "type": "행사",
-          "title": "AI 자율제조혁신 컨퍼런스 안내",
-          "link": "https://www.amws.co.kr/2026/kor/index.html"
+          "type": "매뉴얼",
+          "title": "스마트제조 고도화 전략 자료",
+          "link": "https://www.smart-factory.kr/policy/strategy"
         },
         {
-          "type": "산업",
-          "title": "스마트팩토리 관련 산업 동향",
-          "link": "https://www.amws.co.kr/"
+          "type": "뉴스",
+          "title": "자율제조 혁신 트렌드 브리핑",
+          "link": "https://www.amws.co.kr/2026/kor/media.html"
         }
       ],
       "leader_talk": {
         "speaker_name": "기조연설자",
         "speaker_title": "산업계 리더",
         "quote": "제조 경쟁력은 속도가 아니라 자율화 수준에서 결정됩니다."
-      }
-    },
-    {
-      "id": "evt_2026_03_sk_hynix_mwc",
-      "title": "SK hynix at MWC 2026",
-      "date": "2026-03-02",
-      "category": "Semiconductor / AI",
-      "theme": "상용화",
-      "linkurl": "https://news.skhynix.co.kr/mwc-2026/",
-      "life_impact": {
-        "automation": 20,
-        "new_jobs": 5,
-        "daily_convenience": 10,
-        "primary_driver": "업무 자동화",
-        "impact_summary": "AI 메모리와 온디바이스, 자동차 전장용 메모리 전략이 확대"
-      },
-      "insight": {
-        "highlight_title": "AI 메모리 솔루션 공개",
-        "highlight_text": "MWC 2026에서 최신 AI 메모리 솔루션과 파트너 협업을 소개했습니다.",
-        "description": "모바일과 네트워크 행사에 반도체 관점의 AI 메모리 전략이 결합되는 사례입니다."
-      },
-      "trends": [
-        {
-          "type": "보도자료",
-          "title": "SK hynix MWC 2026 뉴스룸",
-          "link": "https://news.skhynix.co.kr/mwc-2026/"
-        },
-        {
-          "type": "기술",
-          "title": "AI 인프라용 메모리 기술",
-          "link": "https://news.skhynix.co.kr/"
-        }
-      ],
-      "leader_talk": {
-        "speaker_name": "SK하이닉스 경영진",
-        "speaker_title": "SK hynix",
-        "quote": "AI 시대의 성능 경쟁은 메모리 혁신에서 갈립니다."
       }
     },
     {
@@ -359,94 +317,20 @@
       },
       "trends": [
         {
-          "type": "세션",
-          "title": "Google Cloud Next 2026 세션",
-          "link": "https://cloud.withgoogle.com/next/agenda"
+          "type": "기술문서",
+          "title": "Vertex AI 및 Generative AI 가이드",
+          "link": "https://cloud.google.com/vertex-ai/docs"
         },
         {
-          "type": "블로그",
-          "title": "Google Cloud AI 및 Vertex AI 발표",
-          "link": "https://cloud.google.com/blog"
+          "type": "사례연구",
+          "title": "구글 클라우드 고객 성공 사례",
+          "link": "https://cloud.google.com/customers"
         }
       ],
       "leader_talk": {
         "speaker_name": "토마스 쿠리안",
         "speaker_title": "Google Cloud CEO",
         "quote": "데이터가 머무는 곳에 지능을 심으십시오. 클라우드는 이제 수동적인 저장 공간이 아니라 비즈니스를 능동적으로 실행하는 주체입니다."
-      }
-    },
-    {
-      "id": "evt_2026_04_humanx",
-      "title": "HumanX 2026",
-      "date": "2026-04-06",
-      "category": "AI / Product",
-      "theme": "PoC",
-      "linkurl": "https://www.humanx.co/",
-      "life_impact": {
-        "automation": 15,
-        "new_jobs": 10,
-        "daily_convenience": 10,
-        "primary_driver": "업무 자동화",
-        "impact_summary": "AI 의사결정과 제품 운영의 연결이 강화"
-      },
-      "insight": {
-        "highlight_title": "AI 의사결정자를 위한 컨퍼런스",
-        "highlight_text": "기업 내 AI 도입, 운영, 거버넌스를 실무 중심으로 다룹니다.",
-        "description": "AI 제품 전략, 운영 체계, 조직 내 도입 방식이 중심이 되는 행사입니다."
-      },
-      "trends": [
-        {
-          "type": "아젠다",
-          "title": "HumanX 2026 프로그램",
-          "link": "https://www.humanx.co/"
-        },
-        {
-          "type": "세션",
-          "title": "AI 운영과 거버넌스 트랙",
-          "link": "https://www.humanx.co/"
-        }
-      ],
-      "leader_talk": {
-        "speaker_name": "기조연설자",
-        "speaker_title": "HumanX 운영진",
-        "quote": "AI는 이제 실험이 아니라 조직 운영의 핵심 시스템입니다."
-      }
-    },
-    {
-      "id": "evt_2026_04_aim",
-      "title": "AIM-2026",
-      "date": "2026-04-27",
-      "category": "AI / ML",
-      "theme": "R&D",
-      "linkurl": "https://artificialintelligence.unitedscientificgroup.org/",
-      "life_impact": {
-        "automation": 10,
-        "new_jobs": 10,
-        "daily_convenience": 5,
-        "primary_driver": "연구 확산",
-        "impact_summary": "머신러닝과 데이터 사이언스 연구 성과가 산업 적용으로 이어짐"
-      },
-      "insight": {
-        "highlight_title": "AI와 ML의 국제 학술 논의",
-        "highlight_text": "데이터 사이언스, AI, ML 최신 연구 주제가 폭넓게 발표됩니다.",
-        "description": "국제 학술대회 성격의 행사로, 연구자와 실무자가 함께 최신 방법론을 논의합니다."
-      },
-      "trends": [
-        {
-          "type": "행사",
-          "title": "AIM-2026 공식 사이트",
-          "link": "https://artificialintelligence.unitedscientificgroup.org/"
-        },
-        {
-          "type": "학술",
-          "title": "AI/ML 국제 학술 발표 자료",
-          "link": "https://www.springer.com/"
-        }
-      ],
-      "leader_talk": {
-        "speaker_name": "기조연설자",
-        "speaker_title": "학술위원회",
-        "quote": "혁신은 실험실에서 시작해 산업 전반으로 퍼집니다."
       }
     },
     {
@@ -470,14 +354,14 @@
       },
       "trends": [
         {
-          "type": "아젠다",
-          "title": "AI EXPO KOREA 2026 행사 안내",
-          "link": "https://www.aiexpo.co.kr/home/v1.php?s=31"
+          "type": "디렉토리",
+          "title": "참가 기업 및 솔루션 디렉토리",
+          "link": "https://www.aiexpo.co.kr/home/v1.php?s=33"
         },
         {
-          "type": "전시",
-          "title": "AI 솔루션 및 산업 적용 사례",
-          "link": "https://www.aiexpo.co.kr/"
+          "type": "컨퍼런스",
+          "title": "AI 융합 비즈니스 개발 컨퍼런스",
+          "link": "https://www.aiexpo.co.kr/home/v1.php?s=41"
         }
       ],
       "leader_talk": {
@@ -507,14 +391,14 @@
       },
       "trends": [
         {
-          "type": "세션",
-          "title": "Google I/O 2026 세션 안내",
-          "link": "https://io.google/2026/"
+          "type": "실습",
+          "title": "Google Developer Codelabs",
+          "link": "https://codelabs.developers.google.com/"
         },
         {
-          "type": "블로그",
-          "title": "Google AI 및 Android 업데이트",
-          "link": "https://blog.google/"
+          "type": "커뮤니티",
+          "title": "Google Developer Groups (GDG) 소식",
+          "link": "https://developers.google.com/community/gdg"
         }
       ],
       "leader_talk": {
@@ -544,94 +428,20 @@
       },
       "trends": [
         {
-          "type": "세션",
-          "title": "WWDC 2026 세션 및 플랫폼 가이드",
-          "link": "https://developer.apple.com/wwdc26/"
+          "type": "가이드라인",
+          "title": "Human Interface Guidelines: AI & Machine Learning",
+          "link": "https://developer.apple.com/design/human-interface-guidelines/machine-learning/"
         },
         {
-          "type": "문서",
-          "title": "Apple Developer 뉴스",
-          "link": "https://developer.apple.com/news/"
+          "type": "동영상",
+          "title": "Apple Developer 기술 세션 아카이브",
+          "link": "https://developer.apple.com/videos/wwdc2026/"
         }
       ],
       "leader_talk": {
         "speaker_name": "팀 쿡",
         "speaker_title": "Apple CEO",
         "quote": "가장 좋은 AI는 사용자가 느끼지 못할 정도로 자연스럽게 스며드는 기술입니다."
-      }
-    },
-    {
-      "id": "evt_2026_06_meta_connect",
-      "title": "Meta Connect 2026",
-      "date": "2026-06-16",
-      "category": "XR / AI",
-      "theme": "PoC",
-      "linkurl": "https://www.meta.com/connect/",
-      "life_impact": {
-        "automation": 10,
-        "new_jobs": 10,
-        "daily_convenience": 10,
-        "primary_driver": "일상 편의성",
-        "impact_summary": "공간컴퓨팅과 AI 비서의 결합이 일상 인터페이스를 변화"
-      },
-      "insight": {
-        "highlight_title": "XR과 AI의 결합",
-        "highlight_text": "웨어러블, 공간컴퓨팅, AI 비서의 통합이 핵심입니다.",
-        "description": "메타의 대표 개발자 행사로, 차세대 AR/VR 및 AI 기반 인터페이스 방향성이 공개됩니다."
-      },
-      "trends": [
-        {
-          "type": "세션",
-          "title": "Meta Connect 발표 및 세션",
-          "link": "https://www.meta.com/connect/"
-        },
-        {
-          "type": "뉴스룸",
-          "title": "Meta Reality Labs 발표",
-          "link": "https://about.fb.com/news/"
-        }
-      ],
-      "leader_talk": {
-        "speaker_name": "마크 저커버그",
-        "speaker_title": "Meta CEO",
-        "quote": "다음 컴퓨팅 플랫폼은 화면이 아니라 공간이 될 것입니다."
-      }
-    },
-    {
-      "id": "evt_2026_06_lg_awe",
-      "title": "LG at AWE 2026",
-      "date": "2026-03-12",
-      "category": "Hardware / Smart Home",
-      "theme": "상용화",
-      "linkurl": "https://www.lg.com/kr",
-      "life_impact": {
-        "automation": 20,
-        "new_jobs": 5,
-        "daily_convenience": 25,
-        "primary_driver": "일상 편의성",
-        "impact_summary": "스마트홈과 AI 가전의 현지화 및 플랫폼 통합이 강화"
-      },
-      "insight": {
-        "highlight_title": "LG 씽큐 홈과 AI 가전",
-        "highlight_text": "중국 최대 가전 전시회 AWE 2026에서 스마트홈 플랫폼을 선보였습니다.",
-        "description": "LG전자의 가전·스마트홈 전략이 글로벌 전시회에서 구체화된 사례입니다."
-      },
-      "trends": [
-        {
-          "type": "보도자료",
-          "title": "LG전자 뉴스룸",
-          "link": "https://www.lg.com/global/press-release"
-        },
-        {
-          "type": "제품",
-          "title": "LG ThinQ 및 스마트홈 전략",
-          "link": "https://www.lg.com/kr/"
-        }
-      ],
-      "leader_talk": {
-        "speaker_name": "LG전자 관계자",
-        "speaker_title": "LG Electronics",
-        "quote": "가전은 이제 연결을 넘어 집 전체를 이해하고 조율하는 지능형 플랫폼입니다."
       }
     },
     {
@@ -655,14 +465,14 @@
       },
       "trends": [
         {
-          "type": "아젠다",
-          "title": "AI Summit Seoul 2026 프로그램",
-          "link": "https://www.aisummit.co.kr/"
+          "type": "회원사",
+          "title": "AI Summit 파트너 참여사 리스트",
+          "link": "https://www.aisummit.co.kr/partner/"
         },
         {
-          "type": "행사",
-          "title": "AI Summit Seoul 전시 및 파트너링",
-          "link": "https://www.aisummit.co.kr/"
+          "type": "영상",
+          "title": "과거 세션 하이라이트 및 인사이트",
+          "link": "https://www.aisummit.co.kr/media/"
         }
       ],
       "leader_talk": {
@@ -692,14 +502,14 @@
       },
       "trends": [
         {
-          "type": "세션",
-          "title": "AWS re:Invent 세션 캘린더",
-          "link": "https://reinvent.awsevents.com/session-catalog/"
+          "type": "학습",
+          "title": "AWS Skill Builder: AI & ML 학습",
+          "link": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/16912/aws-educate-introduction-to-artificial-intelligence"
         },
         {
-          "type": "블로그",
-          "title": "AWS 뉴스룸 및 발표",
-          "link": "https://aws.amazon.com/blogs/aws/"
+          "type": "워크숍",
+          "title": "AWS Hands-on Workshops",
+          "link": "https://workshops.aws/"
         }
       ],
       "leader_talk": {
