@@ -121,11 +121,32 @@
 
 
 :root {
-  /* Mobile-first dynamic scaling: smoothly adapts across device widths */
-  --app-text-scale: clamp(146%, calc(118% + 10vw), 170%);
+  /* Default mobile baseline */
+  --app-text-scale: 164%;
 }
 
-/* Keep desktop/tablet text at design baseline */
+/* Small phones */
+@media (max-width: 374px) {
+  :root {
+    --app-text-scale: 158%;
+  }
+}
+
+/* Common Android large phones (e.g., S20 Ultra width range) */
+@media (min-width: 375px) and (max-width: 430px) {
+  :root {
+    --app-text-scale: 170%;
+  }
+}
+
+/* Larger phones / foldable portrait widths */
+@media (min-width: 431px) and (max-width: 767px) {
+  :root {
+    --app-text-scale: 166%;
+  }
+}
+
+/* Keep tablet/desktop at design baseline */
 @media (min-width: 768px) {
   :root {
     --app-text-scale: 100%;
