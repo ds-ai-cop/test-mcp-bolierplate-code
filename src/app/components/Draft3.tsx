@@ -254,8 +254,8 @@ export const Draft3 = ({
       </main>
       <style>{`
         .draft3 {
-          -webkit-text-size-adjust: 156%;
-          text-size-adjust: 156%;
+          -webkit-text-size-adjust: var(--app-text-scale);
+          text-size-adjust: var(--app-text-scale);
         }
       `}</style>
     </div>

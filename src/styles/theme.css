@@ -121,28 +121,11 @@
 
 
 :root {
-  --app-text-scale: 156%;
+  /* Mobile-first dynamic scaling: smoothly adapts across device widths */
+  --app-text-scale: clamp(146%, calc(118% + 10vw), 170%);
 }
 
-@media (max-width: 374px) {
-  :root {
-    --app-text-scale: 148%;
-  }
-}
-
-@media (min-width: 375px) and (max-width: 767px) {
-  :root {
-    --app-text-scale: 156%;
-  }
-}
-
-/* Galaxy S20 Ultra and similar large phones */
-@media (min-width: 400px) and (max-width: 430px) {
-  :root {
-    --app-text-scale: 168%;
-  }
-}
-
+/* Keep desktop/tablet text at design baseline */
 @media (min-width: 768px) {
   :root {
     --app-text-scale: 100%;
