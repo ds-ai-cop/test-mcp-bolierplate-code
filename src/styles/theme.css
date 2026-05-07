@@ -119,6 +119,36 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+
+:root {
+  --app-text-scale: 156%;
+}
+
+@media (max-width: 374px) {
+  :root {
+    --app-text-scale: 148%;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  :root {
+    --app-text-scale: 156%;
+  }
+}
+
+/* Galaxy S20 Ultra and similar large phones */
+@media (min-width: 400px) and (max-width: 430px) {
+  :root {
+    --app-text-scale: 168%;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --app-text-scale: 100%;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -126,6 +156,8 @@
 
   body {
     @apply bg-background text-foreground;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   /**

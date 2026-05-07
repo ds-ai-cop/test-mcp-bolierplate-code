@@ -536,8 +536,8 @@ export const Draft1 = ({
       {/* Global & Third-Party CSS Overrides for Draft 1 */}
       <style>{`
         .draft1 {
-          -webkit-text-size-adjust: 156%;
-          text-size-adjust: 156%;
+          -webkit-text-size-adjust: var(--app-text-scale);
+          text-size-adjust: var(--app-text-scale);
         }
         .draft1 .slick-slider,
         .draft1 .slick-list,

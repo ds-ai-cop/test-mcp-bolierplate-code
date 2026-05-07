@@ -542,8 +542,8 @@ export const Draft2 = ({
       {/* Global & Third-Party CSS Overrides for Draft 2 */}
       <style>{`
         .draft2 {
-          -webkit-text-size-adjust: 156%;
-          text-size-adjust: 156%;
+          -webkit-text-size-adjust: var(--app-text-scale);
+          text-size-adjust: var(--app-text-scale);
         }
         .draft2 .slick-slider,
         .draft2 .slick-list,

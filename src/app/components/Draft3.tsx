@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { ChevronLeft, Share2, Bookmark, BarChart3, TrendingUp, Lightbulb, ExternalLink } from "lucide-react";
+import { ChevronLeft, BarChart3, TrendingUp, Lightbulb, ExternalLink } from "lucide-react";
 import { differenceInCalendarDays, format, parseISO, startOfDay } from "date-fns";
 import type { RoadmapDatasetEvent } from "../types/time-roadmap";
 
@@ -80,14 +80,7 @@ export const Draft3 = ({
         <span className={`text-[11px] font-bold ${isDarkMode ? "text-slate-100" : "text-slate-800"}`}>
           행사 상세 정보
         </span>
-        <div className="flex gap-1">
-          <button className={`p-1 rounded-full transition-colors ${isDarkMode ? "hover:bg-slate-800" : "hover:bg-slate-50"}`}>
-            <Share2 size={12} className={isDarkMode ? "text-slate-300" : "text-slate-600"} />
-          </button>
-          <button className={`p-1 rounded-full transition-colors ${isDarkMode ? "hover:bg-slate-800" : "hover:bg-slate-50"}`}>
-            <Bookmark size={12} className={isDarkMode ? "text-slate-300" : "text-slate-600"} />
-          </button>
-        </div>
+        <div />
       </header>
 
       <main className="flex-1 overflow-y-auto pb-8">
