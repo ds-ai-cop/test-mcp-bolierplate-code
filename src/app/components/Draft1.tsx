@@ -239,7 +239,7 @@ const TimeRoadmap = ({
 
         return (
           <SectionContainer
-            title="타임 로드맵 (이달의 컨퍼런스)"
+            title="타임 로드맵"
             headerRight={
               <button className="p-1 hover:bg-slate-100 rounded-md transition-colors">
                 <MoreVertical size={10} />
@@ -536,8 +536,8 @@ export const Draft1 = ({
       {/* Global & Third-Party CSS Overrides for Draft 1 */}
       <style>{`
         .draft1 {
-          -webkit-text-size-adjust: var(--app-text-scale);
-          text-size-adjust: var(--app-text-scale);
+          -webkit-text-size-adjust: 156%;
+          text-size-adjust: 156%;
         }
         .draft1 .slick-slider,
         .draft1 .slick-list,
