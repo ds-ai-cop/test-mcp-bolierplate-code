@@ -26,8 +26,15 @@ export interface LeaderTalk {
   quote: string;
 }
 
+export interface EventPaper {
+  title: string;
+  summary?: string;
+  link?: string;
+}
+
 export interface RoadmapDatasetEvent {
   id: string;
+  image_url?: string;
   title: string;
   date: string; // YYYY-MM-DD
   linkurl?: string;
@@ -35,6 +42,7 @@ export interface RoadmapDatasetEvent {
   theme: string;
   insight: EventInsight;
   trends: EventTrend[];
+  papers?: EventPaper[];
   leader_talk: LeaderTalk;
 }
 

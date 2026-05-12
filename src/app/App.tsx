@@ -49,6 +49,12 @@ function DetailPage({
 
 export default function App() {
   const [mainMode, setMainMode] = useState<1 | 2>(1);
+  const [calendarSelected, setCalendarSelected] = useState<Date | undefined>(
+    () => new Date(),
+  );
+  const [calendarMonth, setCalendarMonth] = useState<Date>(() => new Date());
+  const [focusEvent, setFocusEvent] = useState<RoadmapDatasetEvent | null>(null);
+
   const isDarkMode = mainMode === 2;
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -81,6 +87,12 @@ export default function App() {
                   navigate(`/event/${encodeURIComponent(ev.id)}`)
                 }
                 fullBleed={FULL_BLEED_MODE}
+                calendarSelected={calendarSelected}
+                onCalendarSelectedChange={setCalendarSelected}
+                calendarMonth={calendarMonth}
+                onCalendarMonthChange={setCalendarMonth}
+                focusEvent={focusEvent}
+                onFocusEventChange={setFocusEvent}
               />
             }
           />

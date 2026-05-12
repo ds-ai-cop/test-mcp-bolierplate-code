@@ -1,7 +1,16 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import { ChevronLeft, BarChart3, TrendingUp, Lightbulb, ExternalLink } from "lucide-react";
 import { differenceInCalendarDays, format, parseISO, startOfDay } from "date-fns";
 import type { RoadmapDatasetEvent } from "../types/time-roadmap";
+
+/** Used when `image_url` is missing, blank, or fails to load. */
+const DETAIL_HERO_FALLBACK_IMAGE =
+  "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80";
+
+function resolveHeroImageUrl(ev: RoadmapDatasetEvent): string {
+  const raw = ev.image_url?.trim();
+  return raw && raw.length > 0 ? raw : DETAIL_HERO_FALLBACK_IMAGE;
+}
 
 export const Draft3 = ({
   selectedEvent,
@@ -16,11 +25,13 @@ export const Draft3 = ({
 }) => {
   const fallbackEvent: RoadmapDatasetEvent = {
     id: "fallback",
+    image_url: DETAIL_HERO_FALLBACK_IMAGE,
     title: "컨퍼런스를 선택해 주세요",
     date: format(new Date(), "yyyy-MM-dd"),
     category: "Conference",
     theme: "PoC",
     trends: [],
+    papers: [],
     leader_talk: {
       speaker_name: "리더",
       speaker_title: "연사",
@@ -37,19 +48,11 @@ export const Draft3 = ({
   const eventDate = parseISO(event.date);
   const ddayDiff = differenceInCalendarDays(startOfDay(eventDate), startOfDay(new Date()));
   const ddayLabel = ddayDiff <= 0 ? "D-Day" : `D-${ddayDiff}`;
-  const heroGif = useMemo(() => {
-    const gifPool = [
-      "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmwzM2Y0bXI4dHkxMTk0cnBkdGFlMDR1N2swNWUyZDZpbGVxdGZkeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9dg/itjULPVDW2y1IYv1Oz/giphy.gif",
-      "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExajhvZGdzazBxemtqZjl0bmc4dTVuajZkc28zaXY5b3lhZTE2aG9xaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9dg/Gc6uTfUrvXVCbCxf4T/giphy.gif",
-      "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExamo2OXBybGw5OXh4bmszcXQzbHg2M214d3hqMXhwdDZ1bzViOXF0NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wwg1suUiTbCY8H8vIA/giphy.gif",
-      "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHB2YnRvbW1rcnlub3Y4NWowMHdnNndvZXY3d2F6NTgwZXNveHBlciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fwbZnTftCXVocKzfxR/giphy.gif",
-      "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3hkcDI2YWIyMGkzYjVieXhmbGg4Y2Z1cmk4d3lxd283MzB2aTd3NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/66M6ZwJkTLYikvhrqZ/giphy.gif",
-      "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXN2bm85aGFtMDkxcmNubG01eGNiOHA4OHdwYWV0Z3owZnR6dzk0ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KGhpQ5NMoWKQurlHwI/giphy.gif",
-      "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGE0M2pjZDI1NDB0MXB5d3p5NnV4bmZqNzQ1dm5oZmFucXFpc3RuYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OLPQ6z2hlHmwFc4Hso/giphy.gif",
-      "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzB2OWxrdjRteDVudW94ZWZ4OHV1cGVqcG1wdjJicXczNjQzOTJhZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/GrPgFtvyLlgElFiO7m/giphy.gif",
-    ];
-    return gifPool[Math.floor(Math.random() * gifPool.length)];
-  }, [event.id]);
+
+  const [heroSrc, setHeroSrc] = useState(() => resolveHeroImageUrl(event));
+  useEffect(() => {
+    setHeroSrc(resolveHeroImageUrl(event));
+  }, [event.id, event.image_url]);
 
   return (
     <div
@@ -87,9 +90,10 @@ export const Draft3 = ({
         {/* 2. Hero / Event Image (wf-box bg-gray-200) */}
         <div className="relative w-full h-[150px] bg-slate-200 overflow-hidden">
           <img
-            src={heroGif}
-            alt="Tech abstract GIF"
+            src={heroSrc}
+            alt={event.title}
             className="w-full h-full object-cover opacity-90"
+            onError={() => setHeroSrc(DETAIL_HERO_FALLBACK_IMAGE)}
           />
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
@@ -249,6 +253,38 @@ export const Draft3 = ({
                 <span className="absolute -bottom-2 -right-0 text-[12px] text-indigo-300 opacity-50 font-serif">"</span>
               </div>
             </div>
+            {(event.papers ?? []).length > 0 && (
+              <div className={`mt-2 p-2 rounded-md border ${isDarkMode ? "bg-slate-800 border-slate-700" : "bg-slate-50/50 border-slate-100"}`}>
+                <div className={`text-[8px] font-bold mb-1.5 ${isDarkMode ? "text-cyan-300" : "text-blue-700"}`}>
+                  관련 논문
+                </div>
+                <ul className="flex flex-col gap-1.5">
+                  {(event.papers ?? []).slice(0, 2).map((paper) => (
+                    <li key={paper.title} className="text-[8px] leading-relaxed">
+                      {paper.link ? (
+                        <a
+                          href={paper.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`font-semibold underline underline-offset-2 ${isDarkMode ? "text-slate-100 decoration-cyan-500/60" : "text-slate-800 decoration-blue-400/60"}`}
+                        >
+                          {paper.title}
+                        </a>
+                      ) : (
+                        <span className={`font-semibold ${isDarkMode ? "text-slate-100" : "text-slate-800"}`}>
+                          {paper.title}
+                        </span>
+                      )}
+                      {paper.summary && (
+                        <p className={`mt-0.5 ${isDarkMode ? "text-slate-300" : "text-slate-600"}`}>
+                          {paper.summary}
+                        </p>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </section>
         </div>
       </main>

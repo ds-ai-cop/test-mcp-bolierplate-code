@@ -209,16 +209,17 @@ const TimeRoadmap = ({
         const dynamicDdayDate = ddayBaseEvent
           ? format(ddayBaseEvent.dateObj, "MM.dd")
           : data.ddayDate;
-        const selectedEvent = calendarSelected
-          ? events.find((event) => isSameDay(event.dateObj, calendarSelected))
-          : undefined;
-        const selectedDatasetEvent = selectedEvent
-          ? roadmap2026.events.find(
-              (event) =>
-                event.title === selectedEvent.name &&
-                event.date === selectedEvent.date,
-            )
-          : undefined;
+        const selectedEvents = calendarSelected
+          ? events.filter((event) => isSameDay(event.dateObj, calendarSelected))
+          : [];
+        const selectedDatasetEvents = roadmap2026.events.filter((event) =>
+          selectedEvents.some(
+            (selectedEvent) =>
+              event.title === selectedEvent.name &&
+              event.date === selectedEvent.date,
+          ),
+        ) as RoadmapDatasetEvent[];
+        const selectedDatasetEvent = selectedDatasetEvents[0];
         const ddayDatasetEvent = ddayBaseEvent
           ? roadmap2026.events.find(
               (event) =>
@@ -290,28 +291,54 @@ const TimeRoadmap = ({
                 />
               </div>
 
-              <button
-                type="button"
-                onClick={() => detailTargetEvent && onOpenDetail(detailTargetEvent)}
-                disabled={!detailTargetEvent}
-                className={`rounded-lg p-2.5 flex justify-between items-center border mt-2.5 w-full text-left ${
-                  detailTargetEvent
-                    ? "bg-[#f0f5ff] border-blue-100/50 cursor-pointer active:scale-[0.99]"
-                    : "bg-slate-100 border-slate-200 cursor-not-allowed opacity-80"
-                } transition-transform`}
-              >
-                <div className="text-blue-600 font-bold text-[8px] flex items-center gap-1">
-                  <span className="text-[7px] font-semibold text-blue-500">
-                    [{selectedDdayLabel}]
-                  </span>{" "}
-                  {selectedDatasetEvent?.title ?? dynamicDdayEventName}
+              {selectedDatasetEvents.length > 0 ? (
+                <div className="mt-2.5 flex flex-col gap-1.5">
+                  {selectedDatasetEvents.map((event) => {
+                    const eventLabel = calendarDiffToDdayLabel(
+                      differenceInCalendarDays(parseISO(event.date), today),
+                    );
+                    return (
+                      <button
+                        key={event.id}
+                        type="button"
+                        onClick={() => onOpenDetail(event)}
+                        className="rounded-lg p-2.5 flex justify-between items-center border w-full text-left bg-[#f0f5ff] border-blue-100/50 cursor-pointer active:scale-[0.99] transition-transform"
+                      >
+                        <div className="text-blue-600 font-bold text-[8px] flex items-center gap-1">
+                          <span className="text-[7px] font-semibold text-blue-500">
+                            [{eventLabel}]
+                          </span>{" "}
+                          {event.title}
+                        </div>
+                        <div className="bg-white text-blue-600 font-bold text-[6px] px-1.5 py-1 rounded-sm border border-blue-100 shadow-sm">
+                          {format(parseISO(event.date), "MM.dd")}
+                        </div>
+                      </button>
+                    );
+                  })}
                 </div>
-                <div className="bg-white text-blue-600 font-bold text-[6px] px-1.5 py-1 rounded-sm border border-blue-100 shadow-sm">
-                  {selectedDatasetEvent
-                    ? format(parseISO(selectedDatasetEvent.date), "MM.dd")
-                    : dynamicDdayDate}
-                </div>
-              </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => detailTargetEvent && onOpenDetail(detailTargetEvent)}
+                  disabled={!detailTargetEvent}
+                  className={`rounded-lg p-2.5 flex justify-between items-center border mt-2.5 w-full text-left ${
+                    detailTargetEvent
+                      ? "bg-[#f0f5ff] border-blue-100/50 cursor-pointer active:scale-[0.99]"
+                      : "bg-slate-100 border-slate-200 cursor-not-allowed opacity-80"
+                  } transition-transform`}
+                >
+                  <div className="text-blue-600 font-bold text-[8px] flex items-center gap-1">
+                    <span className="text-[7px] font-semibold text-blue-500">
+                      [{selectedDdayLabel}]
+                    </span>{" "}
+                    {dynamicDdayEventName}
+                  </div>
+                  <div className="bg-white text-blue-600 font-bold text-[6px] px-1.5 py-1 rounded-sm border border-blue-100 shadow-sm">
+                    {dynamicDdayDate}
+                  </div>
+                </button>
+              )}
 
               <div className="mt-2 rounded-md bg-slate-50 px-2 py-1.5 text-[8px] text-slate-600">
                 {" "}
@@ -320,9 +347,9 @@ const TimeRoadmap = ({
                     ? format(calendarSelected, "yyyy.MM.dd")
                     : "없음"}
                 </span>
-                {selectedEvent && (
+                {selectedEvents.length > 0 && (
                   <span className="ml-1.5 text-blue-600 font-semibold">
-                    · {selectedEvent.name}
+                    · {selectedEvents.map((event) => event.name).join(", ")}
                   </span>
                 )}
               </div>
