@@ -965,6 +965,74 @@
         "speaker_title": "전자공학 연구자",
         "quote": "기초 연구와 산업 응용이 만나는 지점이 전자공학의 가장 강한 지점입니다."
       }
+    },
+    {
+      "id": "evt_2026_06_techcon",
+      "image_url": "https://cdn.imweb.me/thumbnail/20260608/060c03dac67da.png",
+      "title": "TechCon 2026 (제 8 회 국제 스마트 기술 컨퍼런스)",
+      "date": "2026-06-10",
+      "category": "AI / Smart Tech",
+      "theme": "물리·지능 융합",
+      "linkurl": "https://techcon.kr/",
+      "life_impact": {
+        "automation": 32,
+        "new_jobs": 12,
+        "daily_convenience": 14,
+        "primary_driver": "스마트 기술 확산",
+        "impact_summary": "AI, 로봇, 디지털 트윈, 데이터가 결합되어 산업 현장과 일상 생활의 자동화 수준을 높입니다."
+      },
+      "insight": {
+        "highlight_title": "물리와 지능의 경계 재정의",
+        "highlight_text": "'The Intelligence Age: 물리와 지능의 경계가 재정의되는 시대'를 주제로 한 글로벌 기술 컨퍼런스입니다.",
+        "description": "2026 년 6 월 10~12 일 서울 삼성동 코엑스 컨퍼런스룸에서 개최되며, 스마트테크 코리아와 동시 진행됩니다."
+      },
+      "trends": [
+        {
+          "type": "아젠다",
+          "title": "TechCon 2026",
+          "link": "https://www.techcon.kr/agenda"
+        }
+      ],
+      "papers": [],
+      "leader_talk": {
+        "speaker_name": "테크콘 조직위원회",
+        "speaker_title": "행사 주최 측",
+        "quote": "AI 와 물리 세계의 융합은 이제 산업과 일상 모두의 새로운 기준이 됩니다."
+      }
+    },
+    {
+      "id": "evt_2026_06_climatetech",
+      "image_url": "https://sctc.seoul.kr/wp-content/uploads/2026/04/Frame-70.svg",
+      "title": "2026 기후테크 컨퍼런스",
+      "date": "2026-06-25",
+      "category": "Climate Tech / AI",
+      "theme": "기후 회복력 도시",
+      "linkurl": "https://sctc.seoul.kr/",
+      "life_impact": {
+        "automation": 18,
+        "new_jobs": 10,
+        "daily_convenience": 16,
+        "primary_driver": "기후 대응 기술",
+        "impact_summary": "AI 와 기후테크 결합으로 도시의 기후 회복력과 에너지 효율이 개선됩니다."
+      },
+      "insight": {
+        "highlight_title": "AI 와 함께 만드는 회복력 있는 도시",
+        "highlight_text": "'AI 와 함께, 회복력 있는 도시를 만드는 기후테크'를 주제로 한 서울시 기후테크 컨퍼런스입니다.",
+        "description": "2026 년 6 월 25~26 일 동대문디자인플라자 (DDP) 트러스트 2 관에서 진행되며, 혁신 기업 모집이 6 월 6 일까지 완료됩니다."
+      },
+      "trends": [
+        {
+          "type": "컨퍼런스",
+          "title": "서울시 기후테크 컨퍼런스 공식 일정",
+          "link": "https://sctc.seoul.kr/%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4-%ec%9d%bc%ec%a0%95/"
+        }
+      ],
+      "papers": [],
+      "leader_talk": {
+        "speaker_name": "서울시 관련자",
+        "speaker_title": "기후 정책 담당",
+        "quote": "기후테크는 AI 와 결합할 때 도시의 회복력과 효율을 가장 크게 높입니다."
+      }
     }
   ]
 }

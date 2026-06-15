@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useCallback, useMemo } from "react";
 import { MoreVertical } from "lucide-react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -16,6 +16,7 @@ import { ko } from "date-fns/locale/ko";
 import { GeminiTimeRoadmapConnector } from "./agent/GeminiTimeRoadmapConnector";
 import { EventQuickBriefing } from "./EventQuickBriefing";
 import { MonthlyEventTimeline } from "./MonthlyEventTimeline";
+import { getDefaultMonthlyEvent, getMonthlyEvents, isCurrentMonth } from "../utils/time-roadmap-month";
 import roadmap2026 from "../data/2026.json";
 import type { RoadmapDatasetEvent } from "../types/time-roadmap";
 
@@ -159,6 +160,32 @@ const TimeRoadmap = ({
   calendarMonth: Date;
   onCalendarMonthChange: (month: Date) => void;
 }) => {
+  const handleMonthChange = useCallback(
+    (month: Date) => {
+      onCalendarMonthChange(month);
+      const defaultEvent = getDefaultMonthlyEvent(month);
+
+      if (isCurrentMonth(month)) {
+        onCalendarSelectedChange(startOfDay(new Date()));
+        onFocusEventChange?.(defaultEvent ?? null);
+        return;
+      }
+
+      if (defaultEvent) {
+        onCalendarSelectedChange(parseISO(defaultEvent.date));
+        onFocusEventChange?.(defaultEvent);
+      } else {
+        onCalendarSelectedChange(undefined);
+        onFocusEventChange?.(null);
+      }
+    },
+    [
+      onCalendarMonthChange,
+      onCalendarSelectedChange,
+      onFocusEventChange,
+    ],
+  );
+
   return (
     <GeminiTimeRoadmapConnector targetYear={calendarMonth.getFullYear()}>
       {({ data, loading, error }) => {
@@ -166,26 +193,18 @@ const TimeRoadmap = ({
           ...event,
           dateObj: parseISO(event.date),
         }));
-        const today = startOfDay(new Date());
-        const upcomingEvents = events
-          .filter((event) => differenceInCalendarDays(event.dateObj, today) >= 0)
-          .sort(
-            (a, b) =>
-              differenceInCalendarDays(a.dateObj, today) -
-              differenceInCalendarDays(b.dateObj, today),
-          );
-        const ddayBaseEvent =
-          upcomingEvents[0] ??
-          events
-            .slice()
-            .sort(
-              (a, b) =>
-                Math.abs(differenceInCalendarDays(a.dateObj, today)) -
-                Math.abs(differenceInCalendarDays(b.dateObj, today)),
-            )[0];
-        const selectedEvents = calendarSelected
-          ? events.filter((event) => isSameDay(event.dateObj, calendarSelected))
-          : [];
+        const monthKey = format(calendarMonth, "yyyy-MM");
+        const monthlyDatasetEvents = getMonthlyEvents(calendarMonth);
+        const defaultMonthlyEvent = getDefaultMonthlyEvent(calendarMonth);
+        const isSelectedInViewedMonth =
+          calendarSelected != null &&
+          format(calendarSelected, "yyyy-MM") === monthKey;
+        const selectedEvents =
+          calendarSelected && isSelectedInViewedMonth
+            ? events.filter((event) =>
+                isSameDay(event.dateObj, calendarSelected),
+              )
+            : [];
         const selectedDatasetEvents = roadmap2026.events.filter((event) =>
           selectedEvents.some(
             (selectedEvent) =>
@@ -194,25 +213,18 @@ const TimeRoadmap = ({
           ),
         ) as RoadmapDatasetEvent[];
         const selectedDatasetEvent = selectedDatasetEvents[0];
-        const ddayDatasetEvent = ddayBaseEvent
-          ? roadmap2026.events.find(
-              (event) =>
-                event.title === ddayBaseEvent.name &&
-                event.date === ddayBaseEvent.date,
-            )
-          : undefined;
-        onFocusEventChange?.(selectedDatasetEvent ?? ddayDatasetEvent ?? null);
+        const briefingEvent =
+          selectedDatasetEvent ?? defaultMonthlyEvent ?? null;
+        onFocusEventChange?.(briefingEvent);
 
-        const monthKey = format(calendarMonth, "yyyy-MM");
-        const monthlyDatasetEvents = (roadmap2026.events as RoadmapDatasetEvent[])
-          .filter((event) => event.date.startsWith(monthKey))
-          .sort((a, b) => a.date.localeCompare(b.date));
-        const selectedEventIds = new Set(
-          selectedDatasetEvents.map((event) => event.id),
-        );
+        const selectedEventIds =
+          selectedDatasetEvents.length > 0
+            ? new Set(selectedDatasetEvents.map((event) => event.id))
+            : defaultMonthlyEvent
+              ? new Set([defaultMonthlyEvent.id])
+              : new Set<string>();
 
-        const highlightedEventId =
-          selectedDatasetEvent?.id ?? ddayDatasetEvent?.id ?? null;
+        const highlightedEventId = briefingEvent?.id ?? null;
 
         return (
           <SectionContainer
@@ -231,7 +243,7 @@ const TimeRoadmap = ({
                   onSelect={onCalendarSelectedChange}
                   fixedWeeks
                   month={calendarMonth}
-                  onMonthChange={onCalendarMonthChange}
+                  onMonthChange={handleMonthChange}
                   locale={ko}
                   formatters={{
                     formatCaption: (month) => format(month, "yyyy.MM"),
