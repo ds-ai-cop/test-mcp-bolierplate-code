@@ -3,16 +3,6 @@ import { MoreVertical } from "lucide-react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-  Cell,
-} from "recharts";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import {
@@ -24,10 +14,10 @@ import {
 } from "date-fns";
 import { ko } from "date-fns/locale/ko";
 import { GeminiTimeRoadmapConnector } from "./agent/GeminiTimeRoadmapConnector";
+import { EventQuickBriefing } from "./EventQuickBriefing";
+import { MonthlyEventTimeline } from "./MonthlyEventTimeline";
 import roadmap2026 from "../data/2026.json";
 import type { RoadmapDatasetEvent } from "../types/time-roadmap";
-
-const jensenHwang = new URL("../../imports/IMG_0012.png", import.meta.url).href;
 
 // ----------------------------------------------------------------------
 // Section Container Helper (Draft 2 - Dark/Neon theme)
@@ -153,13 +143,6 @@ const CoreSignals = ({
   );
 };
 
-/** Calendar-day diff from today: future → D-n, today → D-Day, past → D+n (avoids D--n). */
-function calendarDiffToDdayLabel(diff: number): string {
-  if (diff === 0) return "D-Day";
-  if (diff > 0) return `D-${diff}`;
-  return `D+${Math.abs(diff)}`;
-}
-
 // ----------------------------------------------------------------------
 // 3. Time Roadmap Section (Draft 2)
 // ----------------------------------------------------------------------
@@ -202,15 +185,6 @@ const TimeRoadmap = ({
                 Math.abs(differenceInCalendarDays(a.dateObj, today)) -
                 Math.abs(differenceInCalendarDays(b.dateObj, today)),
             )[0];
-        const ddayDiff = ddayBaseEvent
-          ? differenceInCalendarDays(ddayBaseEvent.dateObj, today)
-          : null;
-        const dynamicDdayLabel =
-          ddayDiff === null ? data.ddayLabel : calendarDiffToDdayLabel(ddayDiff);
-        const dynamicDdayEventName = ddayBaseEvent?.name ?? data.ddayEventName;
-        const dynamicDdayDate = ddayBaseEvent
-          ? format(ddayBaseEvent.dateObj, "MM.dd")
-          : data.ddayDate;
         const selectedEvents = calendarSelected
           ? events.filter((event) => isSameDay(event.dateObj, calendarSelected))
           : [];
@@ -229,20 +203,22 @@ const TimeRoadmap = ({
                 event.date === ddayBaseEvent.date,
             )
           : undefined;
-        const detailTargetEvent = selectedDatasetEvent ?? ddayDatasetEvent;
-        onFocusEventChange?.(detailTargetEvent ?? null);
-        const selectedDdayLabel = selectedDatasetEvent
-          ? calendarDiffToDdayLabel(
-              differenceInCalendarDays(
-                parseISO(selectedDatasetEvent.date),
-                today,
-              ),
-            )
-          : dynamicDdayLabel;
+        onFocusEventChange?.(selectedDatasetEvent ?? ddayDatasetEvent ?? null);
+
+        const monthKey = format(calendarMonth, "yyyy-MM");
+        const monthlyDatasetEvents = (roadmap2026.events as RoadmapDatasetEvent[])
+          .filter((event) => event.date.startsWith(monthKey))
+          .sort((a, b) => a.date.localeCompare(b.date));
+        const selectedEventIds = new Set(
+          selectedDatasetEvents.map((event) => event.id),
+        );
+
+        const highlightedEventId =
+          selectedDatasetEvent?.id ?? ddayDatasetEvent?.id ?? null;
 
         return (
           <SectionContainer
-            title="타임 로드맵"
+            title="타임 로드맵 (이달의 일정)"
             headerRight={
               <button className="p-1 hover:bg-slate-800 text-slate-400 rounded-md transition-colors">
                 <MoreVertical size={10} />
@@ -271,6 +247,7 @@ const TimeRoadmap = ({
                         isSameDay(e.dateObj, date),
                       );
                       const isSun = date.getDay() === 0;
+                      const isSat = date.getDay() === 6;
 
                       return (
                         <div className="relative flex items-center justify-center w-full h-full">
@@ -278,7 +255,9 @@ const TimeRoadmap = ({
                             className={
                               isSun && !props.activeModifiers.selected
                                 ? "text-rose-500"
-                                : ""
+                                : isSat && !props.activeModifiers.selected
+                                  ? "text-blue-400"
+                                  : ""
                             }
                           >
                             {date.getDate()}
@@ -293,68 +272,17 @@ const TimeRoadmap = ({
                 />
               </div>
 
-              {selectedDatasetEvents.length > 0 ? (
-                <div className="mt-2.5 flex flex-col gap-1.5">
-                  {selectedDatasetEvents.map((event) => {
-                    const eventLabel = calendarDiffToDdayLabel(
-                      differenceInCalendarDays(parseISO(event.date), today),
-                    );
-                    return (
-                      <button
-                        key={event.id}
-                        type="button"
-                        onClick={() => onOpenDetail(event)}
-                        className="rounded-lg p-2.5 flex justify-between items-center border w-full text-left bg-cyan-950/40 border-cyan-900/60 cursor-pointer active:scale-[0.99] transition-transform"
-                      >
-                        <div className="text-cyan-400 font-bold text-[8px] flex items-center gap-1">
-                          <span className="text-[7px] font-semibold text-cyan-300">
-                            [{eventLabel}]
-                          </span>{" "}
-                          {event.title}
-                        </div>
-                        <div className="bg-slate-900 text-cyan-400 font-bold text-[6px] px-1.5 py-1 rounded-sm border border-cyan-800 shadow-[0_0_8px_rgba(6,182,212,0.2)]">
-                          {format(parseISO(event.date), "MM.dd")}
-                        </div>
-                      </button>
-                    );
-                  })}
-                </div>
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => detailTargetEvent && onOpenDetail(detailTargetEvent)}
-                  disabled={!detailTargetEvent}
-                  className={`rounded-lg p-2.5 flex justify-between items-center border mt-2.5 w-full text-left ${
-                    detailTargetEvent
-                      ? "bg-cyan-950/40 border-cyan-900/60 cursor-pointer active:scale-[0.99]"
-                      : "bg-slate-800 border-slate-700 cursor-not-allowed opacity-80"
-                  } transition-transform`}
-                >
-                  <div className="text-cyan-400 font-bold text-[8px] flex items-center gap-1">
-                    <span className="text-[7px] font-semibold text-cyan-300">
-                      [{selectedDdayLabel}]
-                    </span>{" "}
-                    {dynamicDdayEventName}
-                  </div>
-                  <div className="bg-slate-900 text-cyan-400 font-bold text-[6px] px-1.5 py-1 rounded-sm border border-cyan-800 shadow-[0_0_8px_rgba(6,182,212,0.2)]">
-                    {dynamicDdayDate}
-                  </div>
-                </button>
-              )}
-
-              <div className="mt-2 rounded-md bg-slate-800 px-2 py-1.5 text-[8px] text-slate-300">
-                {" "}
-                <span className="font-semibold">
-                  {calendarSelected
-                    ? format(calendarSelected, "yyyy.MM.dd")
-                    : "없음"}
-                </span>
-                {selectedEvents.length > 0 && (
-                  <span className="ml-1.5 text-cyan-300 font-semibold">
-                    · {selectedEvents.map((event) => event.name).join(", ")}
-                  </span>
-                )}
-              </div>
+              <MonthlyEventTimeline
+                events={monthlyDatasetEvents}
+                selectedEventIds={selectedEventIds}
+                highlightedEventId={highlightedEventId}
+                mode="dark"
+                onEventClick={(event) => {
+                  onCalendarSelectedChange(parseISO(event.date));
+                  onFocusEventChange?.(event);
+                  onOpenDetail(event);
+                }}
+              />
 
               {(loading || error) && (
                 <div className="text-center text-[7px] text-slate-500 mt-2">
@@ -364,159 +292,11 @@ const TimeRoadmap = ({
                 </div>
               )}
 
-              <div className="text-center text-[7px] text-slate-500 mt-3 font-medium">
-                이외의 일정은 캘린더에서 확인 가능합니다.
-              </div>
             </div>
           </SectionContainer>
         );
       }}
     </GeminiTimeRoadmapConnector>
-  );
-};
-
-// ----------------------------------------------------------------------
-// 4. Global Pulse Section (Draft 2)
-// ----------------------------------------------------------------------
-const GlobalPulse = ({ focusEvent }: { focusEvent?: RoadmapDatasetEvent | null }) => {
-  const talk = focusEvent?.leader_talk;
-
-  return (
-    <SectionContainer title="글로벌 펄스 (리더스 톡)">
-      <div className="flex gap-2 items-start mt-2.5">
-        <div className="relative shrink-0 pt-0.5">
-          <div className="w-6 h-6 rounded-full p-[1px] bg-gradient-to-tr from-cyan-500 to-fuchsia-500">
-            <img
-              src={jensenHwang}
-              alt="젠슨 황"
-              className="w-full h-full rounded-full object-cover border-[1px] border-slate-900"
-            />
-          </div>
-        </div>
-        <div className="flex-1">
-          <div className="flex items-center gap-1 mb-1.5 text-[8px] font-bold text-slate-200">
-            <span className="text-[10px]">🗣</span>
-            <span>{talk?.speaker_name ?? "젠슨 황"}</span>
-            <span className="text-[6px] font-semibold text-slate-400 bg-slate-800 px-1 py-px rounded-sm border border-slate-700">
-              {talk?.speaker_title ?? "NVIDIA CEO"}
-            </span>
-          </div>
-          <div className="bg-slate-800/80 rounded-lg rounded-tl-sm p-2.5 border border-slate-700 text-slate-300 text-[8px] leading-[1.6] relative shadow-[inset_0_2px_4px_rgba(0,0,0,0.4)] min-h-[55px] flex items-center">
-            "{talk?.quote ??
-              "AI는 전기를 넘어선 새로운 인프라가 될 것입니다. 모든 산업의 근본적인 재편이 이미 시작되었습니다. 우리는 지금 새로운 산업 혁명의 초입에 서 있습니다."}"
-          </div>
-        </div>
-      </div>
-    </SectionContainer>
-  );
-};
-
-// ----------------------------------------------------------------------
-// 5. Life Impact Section (Draft 2)
-// ----------------------------------------------------------------------
-const LifeImpact = ({ focusEvent }: { focusEvent?: RoadmapDatasetEvent | null }) => {
-  const impact = (roadmap2026.events ?? []).reduce(
-    (acc, event: any) => {
-      const lifeImpact = event.life_impact ?? {};
-      return {
-        automation: acc.automation + (lifeImpact.automation ?? 0),
-        new_jobs: acc.new_jobs + (lifeImpact.new_jobs ?? 0),
-        daily_convenience: acc.daily_convenience + (lifeImpact.daily_convenience ?? 0),
-      };
-    },
-    { automation: 0, new_jobs: 0, daily_convenience: 0 },
-  );
-  const focusedImpact = (focusEvent as any)?.life_impact;
-  const effectiveImpact = focusedImpact
-    ? {
-        automation: focusedImpact.automation ?? impact.automation,
-        new_jobs: focusedImpact.new_jobs ?? impact.new_jobs,
-        daily_convenience:
-          focusedImpact.daily_convenience ?? impact.daily_convenience,
-      }
-    : impact;
-  const data = [
-    {
-      name: "업무 자동화율",
-      value: effectiveImpact.automation || 75,
-      fill: "#0ea5e9",
-    }, // sky-500
-    {
-      name: "신규 직업창출",
-      value: effectiveImpact.new_jobs || 35,
-      fill: "#8b5cf6",
-    }, // violet-500
-    {
-      name: "일상 편의성",
-      value: effectiveImpact.daily_convenience || 92,
-      fill: "#06b6d4",
-    }, // cyan-500
-  ];
-
-  return (
-    <SectionContainer title="삶의 임팩트 (트렌드 예측)">
-      <div className="h-[160px] w-full mt-2.5">
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart
-            data={data}
-            id="life-impact-chart-2"
-            accessibilityLayer={false}
-            margin={{ top: 8, right: 0, left: -28, bottom: 12 }}
-            barGap={0}
-            barCategoryGap="30%"
-          >
-            <CartesianGrid
-              strokeDasharray="3 3"
-              vertical={false}
-              stroke="#334155"
-            />
-            <XAxis
-              dataKey="name"
-              axisLine={false}
-              tickLine={false}
-              tick={{
-                fontSize: 7,
-                fill: "#94a3b8",
-                fontWeight: 600,
-              }}
-              dy={8}
-            />
-            <YAxis
-              axisLine={false}
-              tickLine={false}
-              tick={{ fontSize: 6, fill: "#64748b" }}
-            />
-            <Tooltip
-              cursor={{ fill: "#1e293b" }}
-              contentStyle={{
-                backgroundColor: "#0f172a",
-                borderRadius: "6px",
-                border: "1px solid #334155",
-                boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.5)",
-                padding: "6px 8px",
-                fontSize: "7px",
-                fontWeight: 600,
-                color: "#f8fafc"
-              }}
-              formatter={(value: number) => [
-                `${value}%`,
-                "파급력 지수",
-              ]}
-            />
-            <Bar
-              dataKey="value"
-              radius={[3, 3, 0, 0]}
-              barSize={24}
-              animationDuration={1500}
-            >
-              {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={entry.fill} />
-              ))}
-            </Bar>
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
-    </SectionContainer>
   );
 };
 
@@ -562,8 +342,7 @@ export const Draft2 = ({
           calendarMonth={calendarMonth}
           onCalendarMonthChange={onCalendarMonthChange}
         />
-        <GlobalPulse focusEvent={focusEvent} />
-        <LifeImpact focusEvent={focusEvent} />
+        <EventQuickBriefing focusEvent={focusEvent} mode="dark" />
       </main>
       
       {/* Global & Third-Party CSS Overrides for Draft 2 */}

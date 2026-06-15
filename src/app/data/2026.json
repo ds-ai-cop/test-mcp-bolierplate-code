@@ -666,7 +666,7 @@
     },
     {
       "id": "evt_2026_10_github_universe",
-      "image_url": "https://github.githubassets.com/images/modules/site/universe/og-image.jpg",
+      "image_url": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEhAQEBIVFRUXFhgXFxIVFxYVFxIVFRkXFhcXFxUYHykgGBonGxYWJTIhJSkuMC4xGB8zRDMuNygwLisBCgoKDg0OGxAQGi8mICAvKzcyKystLTctLTAtMi0wLS0uLS4tLS0tLS0rLS0tNy0tMi0tLS0tLS0tLS0tNS0tLf/AABEIAKgBKwMBIgACEQEDEQH/xAAcAAEAAgIDAQAAAAAAAAAAAAAABQYEBwECAwj/xABNEAACAQMCAwMHBwcICQUBAAABAgMABBEFIQYSMRNBUQcUIjJhcZEVUnKBobHRFiMzQlNzsjRigpLC0uHiJENUY3STorPBNUSDo/AI/8QAGwEBAAIDAQEAAAAAAAAAAAAAAAQFAgMGAQf/xAAyEQACAgIABAMGBAcBAAAAAAAAAQIDBBEFEiExQVHREzJhcYGxMzSRoQYUIiNy4fAV/9oADAMBAAIRAxEAPwDZ9KUoBSorUeJLG3fs57qGN/mM6hh7x3fXUjBcJIokR1ZCMh1IZSPEEbEUB6UrGtdQhlJEUsbkDJCMrYHjsawLrirT4nMUl5Arg4KmRQVPg2/on302eJp9iYpXVZFIDAgqRkMCMEYznPhjvqHHF2m8/Z+e2/NnGO0Xr0xnOM0PSapSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUAqteUbWpLLT554jiT0URvmFyF5veASR7cVZaiuKdES/tZrVzjnAw255WUhlJAwSMgZAPTNAUzQvJlp9xa209wjmWSFHkdZWPM8ihy25IJ9Lu2rw0eMaZrJ0yDItrmHnWPmZ+zkVH9P0j1PZMD7CvgMWzgyylhieBxNGE5VVHKSRx7bm3l3d4s9BIcqMDGxqseTzhW+N0+q6qT2xUrGjcvMuRyliq7IOXKhR4nYd4EtwxYq8NzbwZX0GjGoBSrSF855Yz0KdM83cDtnFYd9oeiaRY9ndxwyHlb0nRDPOx+Z1YHcDIOF8RVz1uaZIJ3t055gjdmh6M+PRzkjbPtrVXD9jqVvI1zc6Q93dMxY3E1xHlfARpghMez6sDasYx5Vo11V+ziokfP51a6LZWly7RLc3RznIaK0IUlSO4FsvjwOPZVi1VbRbZ1+QZBahD/pAWFZ1XGO1CHMgON+Zjnx2zWbxPpN9q9kGe1FtcwTc8ULyK4lUKM5fYDJJxnvTcgHIybzijU5YXhTSJxOyFeZmTsFZhgt2hwCN+md/GsjYT3BHm/mNsLWWSWELhHlILgAn0GwBjl9XGNsCpyq/wAB6A2n2UNtIwZxzM5X1QznJA8QNhnvxVgoBSlKAUpSgFKUoBSlKAUpSgFU/ia9llv7TTVne3jkieV5IyFlmKkgRRufVOxJxvirhVc16006/nFhdKHmWPtkGHVkQsF5klGP1gMqD3dNqAxJ9AvLWWCWxuZ5l7RVntrmYyq0RzzPG0m6ONuh328MGd1jXLa0Cm4lCFjhEwWeQjqEjUFm6joO8VSuJLC40WE3tre3Ekcbp2lrcsJVdHYJyo2AUxkfj4+6PdtrN+0McDskFuqGd3QpE4LNycqNnLk56UBbtH122vA/m8ocpgOhDK8ZPTnjYBl6HqO6sPUOMLCCR4pJ/ST1wiSSCL94yKQn1kVDy2N957HeSC0jkW3njMcUjvJcLy8yDDIuQrqprD8n7agLC3NvFaMjguXeaYO7szc7SYiPpZyOp6CgL5a3KSoskbK6MMq6kEMD3gjrXjb6lDJLNAjgyRcvaJggoHGVO4wQR3jNQvAumy20dzHI0JBuZHWOBy6QBwpMW6jlw3MeXHf7ax+Il80v7K/GyS/6HOd8ASHmgc9wAkGCT84UBY/lKHt/Necdt2fadmASRHnl5icYG+2M5qHm450xJDG10uQeUuA7Rq3gZQOQH66qxlklsdc1VM804dISCdrWAGNWXvBP5xvqBq7aBY24sreFFQwGFBy4BV1dQST3HmzknvzQGTe6pBCITJIAJZEjjO5Ekkm6KCM9cdentrtqeow20bTTuEjXALEEgcxCjoM9SB9dartpCdP0T0iUXV41jYnOYlklCbnuAyPcKt3lZYDTJ8nq8IHtPbIcfAH4UBcKgr/jHT4Jjby3CiQesAHYR/vHUFU/pEVNknG3XG3vqoeSdFOnRyY/OSvK0zY9J5O0cHm8TgAb0BMXvE1nEkztMAI2EbHDELI68yDYb5G+RtUX5OeKVv7aISSh7kK7SqFK8o7RgvQBfV5Bt+NYvAsUaSa2kWORbkgAHZcR4KjwAORjuxjurL8lP/pNj9GT/vS0BbKUpQClKUApSlAKUpQClKUApSlAKUpQClK4Y7GgOaVVvJ1xNLqdq1xKiIwlZMR82MKqNn0iTn0jXXyj8US6ZbRzxRo7NKI8Sc2ACrtn0SDn0B8TQFrpQUoBSoOW61Dz9I1gjNkY8tPzemJMHYDPjyjHL3k57qnKAVD69w5DeGKRmkiljz2dxC3JImeoB3BB8CD9pqYpQFaXg5HeOS7ubi6EbB0jlZBErjoxjjVQzD25rN1nh2O4kS4WSSCdFKLPCQGKE5KOGBV0zvgg71MUoCF0jhyOCV7l5ZZ52Xk7aZgSideRFUBUXO+w61itwiqNIbW6ubZJGLNDCycgdvWZA6MYyf5pA9lWTFKAwdF0iGziEMCkKCWJJLM7scs7sd2Ynv8AcOgFVvyhXfbwy6bDBJLPNyKPzb9lGCQ3aPLjlAXGdiTnG1XKlAYmn6bHDBHaqAY0jEeCM8yheU8wPXPf76r35CxhDBHeXkduT/JklHIFO5RWKl1Q75Xm7z41GycY6heTTxaRaxSRwtyPcTsQjuP1YwCPvO2DtkZleCuLGvTcQXEPYXNucSxZyu+RzKT3ZHt7jk5oCS1Lhq1ntRYlOWFQoQIeVoinqsjb+kD3nOd85yajbrglJ4Xhubu6nzyhXkdMx8rK2VATlLHlALMCcEjIycw6caajevOdJs4pYImKdtM+O2YYOIwGXGe7JOxBOM4qc4S4vivoJpXUwPASLiJzvCVBJJ2B5cK3UDHKw7qAsoqstwZGss0lvc3NusrF5YYXCozn1mXKkxse8qQfDFQNrxhq98Hn02xiNurEK07EPPy9eQBlA+3c4ySDVg4T4vivrWS6cdiYiwnRj+iKDmY5IHo436eI7qAz9F0CG0NwYs4mZWZDgqvKoQBds4wO8knxrH4a4Xj0/mWGedovS5LeRw0cXM3OeQcoI3z1J6nxqs2fFusXytcadYw+bgkI07kPPykg8oDADpjwztk4NT/BHFa6lHKWjMM0L8k0JOSjb4PQHBw3UAgqw7skCyUpSgFKUoBVX491CaCOEwuUJcgkd4xVoqm+Uw/mrf6bfw1O4bFSyoKS2v8AQKr+Ut7/ALQ/2fhV24Dv5Z4pWmcuRJgE9w5VOPiTWsuYeNbD8mh/MT/vf7CV0HF6K44rcYpPa7JeYLhSlK5EClKUApSlAK4fofca5pQGuvIV/wCnSf8AEP8AwRV08vH8gg/4lP8Aty1iaObzh+S4t/M5bmzkkMkUsALtHkAYYeOAo3xuuQTmudU881+W2hNnLbWcUgkkknHK0uBjCqfYWG2fWySMUBm8V3N18s6fb28zR9pbsDuSi7S5k7P1WdQMjI6hawOKtPm0aSzvYL26lV51jmjnk7QSBst4AdFbu2OCKmtbspW13TplicxrBIGlCsUQkTYDOBgHcdT3jxrjyv2M01tarDE8hF3GxWNWchQkmWIUEgbjf20BzeXMn5QQw879mbMkx8zBC2ZBnlzjPTenk2upo5tS064keR4JuaNpGLs0Mnq7nfGAp/8Akrvd2Up4ghnEbmIWZUy8p5A2ZPR58YzuNs99R3lCt7q0vE1CygklaW2ltpBEhco2MxSEKPEr/wAugMCw4klVdb1nnZ40fsLWMuxizlUD8meXviJxvu/jXnZQ2U0KzXOvSi7dQ5ZLlUSJyM8ojH6o6EAjptirLHwYW0QaaMLI0QYk9BPzCXBPhz+j7qjdL4lNtbx29zpNy1zEgTCW6ukzKOUMsi7YOASQDjO2aAhr/iu5udBlmaVlniuEhaaNipkwVIYFfFWGfHBqwy6dqFta3WptcyzXTWx5YB+hg5yrfm498lFB3PXB2Oaw+LrK/n0VxPboLh5Y27C1jY8q5GAVBYltiSR0yB3VdtSa6SzJs1Rp1jUokmeViOXmU4IwSMgbjfFAa20eGzuraKSLWJY78hWLS3DLiXYshjbAZM5Ax1wOo2qd4512eE6fp73S27zLzXN2voBEQYbsyfVLENjwIA76iuILy1vbWRH0iYX7py4W1Kss2Mc/bAZKA77ncbYrI1Hhq8gh0e8EXnE1nHyT2+zs8TZ9FOoZkBZds9xGcUBGa3fW2nIl3pmrSTSIy9pbS3AmW4QkBvRxsfb3DJGMVt21nEiJIvRlVh7mGR99UO54kluDHDp2lyCVmHPJd2/Zwwr+tzEHc+zPuydq2BGuABtsANhgfUO4eygKzrGradocBwiRBiWSCIANK+ACQvcMBQWOwwO/Aqr6Jp12lvrOr3K9lNcQSNHDg5iRUYrzA752XAO+Fz31CaPqE3ntxqN/pl9NKWHYKIGK26AnlwGHrAYxttuepzWwtE4k+UGktpLG7gUxNl54yisDhSgPziGPwNAYnkfjA0q1x3mUn39q4+4CorhqBG1vW4CoaKSJS6Ho3ME5gff2j/GsXhzU7vQ0ksLiyuLhFdmgmt0LLIrnPKfm7795HMdumZHg7Tru3j1PVbmI+czhpEthuyqgZkjwBnJOBjrhV79qAkuI+J7PR4ktoIw0zbQ2cQ73OQWC+qpZvexOwO5FVutHuNP0LUZLg/n7lhJIo/U7WRE5dts4ZiceOO6sHgzUZLR5bq70y/nvJHYtP2DHkU9yZ9XvyQBtgdBV4F4datb21a1uLXKAK1xGUDM3MVKjvCsgJ94oCJ4ak1aWytjYC2ihSFFj7cOZJ2UYdyF2RCwbHeevQipngDiTz5bhZYVhuYX5J0UbFskBh39VcYJPTrvVe4f4qu9Ot0sbrTbp5YRyI0KF45lHqnnHswMjPT6qlvJpodzD55e3i9nNdy85i/ZqCzDPgcudu4Ad+wAu9KUoBSunar84fEVysinoQfrrzaMeeL8TtXDID1APvrmvKe4SPBkdVz05iFz7s1kk2+hkduxT5q/AVKaRGoVsAdfD2CoT5Tt/28X/ADE/GpfRLuJlYrIjel1DA9w8DWUozS6pgh/KTxAbHT7qe3Ze2XkRfVYxtKyqGKnO4UkgEb4FaR0/yp6pG2ZZEnGdxIiqceAaMLj68+6tt+WqJG0m6K8uQ8LHGMnEqLk+Oxr5ur2CTR6jffC/lJsrwrHIfN5TgBJCORie5JOhPsPKT4VdK+UDVs4f8oeoWaCJXWVB6qzBnKDwVgwbHsJIHdijh5DR9B0rQt55UtVk9V4ov3cQP/dL1Fycc6q3W9l+rlX+ECvPZsaPo6lfOMXHOqr0vZf6XK38QNWrQPK7OmFvYhKvfJFhJPeUPoMfdyijgxo3JSorRuJLO8TtIJ0Yd6k8rL7GRsEVIwzo/qMrfRIP3VgeHpSlKAUrsqE9AT7hXPYt80/A0B0pXLKR1GPfXFAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUBXpGxjbO4HxIH+P1GsvTvXHuNYPnCeP2GvezvY1bLNgb9x/8CoKotg+aUWku7aejnMbHtVsdwffyZO1TfKX+it/pt/DVk+WLf8Aaf8AS/4VVeP7tJo4BG3MQ5J2IwMe0CrThubjxyoN2R/VeR0yqm+iTKLitheTT9BP+9/sJVB7FvD7RWxfJlauYJ8L/rfEfMT210fFM7Gtx3CuyLfTommz2VNkVuUWvoSfFlmJ7K8iP60MmD4MFJU/UwB+qvmVTnevpDymXbWmm3TkYLr2K7jPNL6G2/UKWb+jXzhXN19jBCrfwhwFPfBZpD2MB6NjLyD+Yp2A/nH6ga7+TrhTzyTt5h+YjPQ9JX68v0RsT45A8cbpQY2FeTs10RLpo5v6pdiA07gfTYQALZJD86YdqT/W2H1AVnPwzp7bGytvqhjH2hakLm4jiRpJXVEUZLMQAB7SahbnjCziKiRpEDeqzxSqCPHdc8v87GK1LmfYlNVx6PRH6j5NNNmzyI8J8YnOP6r8w+GKq2oeSS4XJt7mOT2SK0Z+K8wP2VtS2uEkVXRgysMhlIIYeII6ivcV6ptGMqK5eBoa68nOqL/7YP7UkiP8TA/ZXnoFld6df2TSwyQlpo03BAdXYK68w2YYJyM1v+vG6tklAWRQwDKwBGcMh5lYeBBGc1l7Q1SxVroyRpXpBA7gMoyPePxr08yk+b9o/GsSC1p6Zl6T0b31mhskjfb2H7D31gWbCIESejncd/3VkefR/O+w/hQ8MDUvXPuFYtZF9IGclTkYFY9AKUpQClKUApSlAKUpQClKUApSlAKUpQClKUBTK6SdKxPlNPBvs/GsnT3Fw4iTYkE5bpt7qteJX124lsIPbcXpfQtHhXwXNKDSR0qO1r1U95+6rR+T8vzk+J/Co/WOHZSF9JOp72/CvnEMHIi9uD0K8qquSnOWkioVs3yUfoLj97/YWqb+TUvz0+LfhU5w/r8Wko8NwruZG5wYsEAYC4PMRvkVccLxbZ5CUY7eme5fEsW+vkrmm/Iq/wD/AEDrLtNb2R2VMzYH63MoRCfaD24x4Y8a1GxwCasXlA1oX2oXVyuQpYKgbGVWNQmDjbqCfrquuMgj2V0Si49GVh9D8N6cttbQQKPVQZPTmc7u31sSfrqXWo7TbxZoopUOVdFYH2MM1mo1VkrHsuIrotGEkQllu7lwHWzT81ERlTcdl2zSEdCwR41Xwy/edvni+1OW4kMkrF5HbLMT6zE+J6V9QaDEA10pGRIyyewgxrER/wDX/wBQr52424Tk026eFwTGxLRSdzx523+cMgEePsIqyx5bj/SVt6fMzcem6NBo620El0DNOwXzcH0ObBJaNTuNwFLHAbI2BqxLXzhw5aP51arGMuZ4uUDfo6nNfRoao+WnBpt9WSMVtxa8j0qocU8Zm1keOKJZOzAaUs/IBkc3Kux9LBByfEdd8W0NWk73WvMtamuZ4e3WKdn7EnGcriNhkEZXKsNu4UxdTb34IzyJuEehvfg7VVuI1dQyh15uVxysjDZlZe5gdvqqx82+MH37Y93jWqvJ/wAaNfSXt28IiAdX7NTzHlMfIfSOOZvzfgO6rn+WVv8AMk+C/wB6tN2TVTLlsloiWQlNqSXckdW6r7qwK4XVkuvSQMOXY82O/fuJrmtldkbIqUXtM0NNPTFKUrM8FKxZL5VJBB291dflFPBvs/GtftYeZGeXSnpyRmUpSthJFKUoBSlKAUpSgFKUoBSlKAUpSgNUVN8Hfylfot91a2/LNv2A/wCZ/lqb4O4zbzkfmB6jf6z/AC1lys7C/iGPfVKquW5SWl0fdm6GLZGAMb533Hhgd9Yeq9F99V/8s2/YD+v/AJaxr7i0sB+ZA3+f/lqNkSUa22czmcFzJUySh+69SYqn8bfpYvoH+I1m/lOf2Q/r/wCWoPX9Q84dG5eXC4xnOdyfAVu/hy6Es+KT8JfYpMfhGXjWe0tjpL4r1NYzNlmPiSfic10oBSpb7lmXbgDjHzUi2uD+ZJ9Fz/qSeuf5hPw69CcbeRu+vms1vfhmY+Z2mTk9jHk+PoioORUt8yLDDm5bj5Fmtbzszn6vq/8AwHwpqt1Bcp2U0CSJ15ZBzDPiPA+0b1DtLXCy1HUpx6Jk940JdZIzNH0uxtSXt7WNHIIEnpMy564ZySB7ARWaKjElrJjmrGUpT95nnsFD3UR1tZ6gL15XuEa0K+jBygMpwMb48cnPMc9MeEVx9wGb7/SrXl7cLyyREhe3UbKQx2DgYG+AQBuMbyPn+oLkG2hbwZbgqD7w0WR9tZ9hPPyk3AjDE7JGWYKuBsXYDmOc78oHd7a2wnKt8yIzpU1y9SG4K4dlsbZ1mXlkkXnKZB5RgoASMjPok7HvpU/5x3d1cR8PqQCJTuM+r/jVTxHHtypqUEY2RVEUmd+GPVk+kPuqarD02w7AMA3Nk56YxWZVrhVSqojCXdFbY05NoUrMtbLnXm5sfVXr8l/zvs/xqUYFUuvXf314RggAMQTjcgYBPuycfGpi600c7+l3nu/xrx+TR877P8agSom2+hz1mDe5tqPj5ozxSgpU86BdhSlKHopSlAKUpQClKUApSlAKUpQHyhU5wb/KR9Bv/FQdZOnXzwP2keObBHpAkYPsBFSGtok41irujOXZNGz68rjoKpP5W3X+7/qt/eqZ4a1aW6aRZeX0QCOUEdc9ck+FQsqiU6nFeJ1UeKUZD9lDe35olqx7rqPdUh2Iq18HcJW17HK83PlX5RysBtyg+HtrXwOqWFmK63sk+3xRF4pTKGO2/gaHv4uSSRfBj8DuPsNeFba8rnk6W1iW9sw7Ivozqx5iq/qyDAGw6H3qegNalq0nKMpNw7bOYFbU8n+tLLbpASBJEOXl+cg9Vh44GAfAj2itV16W87xsrxsVYHIZTgg++tco8yN9FzqnzG92NcBq13pXlBkUBbmPn/3iYVj7Sh9En3Ee6rPZcXWMvSYIfmyZQ/E7H6jUWVTLqrLqn4/qWBXrIjkrAhuY33R1b6LA/dWQKxVZvbT7GYJa6vLWPzUY164IxUT07SoTVeM7y2mEMC2cqrgGFpuS5JYZ2DMB37ABidtt6y9Qv47dGlmblUfFj3Ko72PhVkTgy0u7WJb62TtWTLnAEkTP6RVZAOb0c49vL4V5XHle2QOJTjyqC7mfp1y0sUUrRtEzKGMT+tGSMlW9orIqq2tjcaVElt5x265cxs6kMkWRyRk83pY9Lf24AAArv8vT/wAz4H8ah3cToqm4S3tfArI0yktov2meoPeayVB7zn8Kreh6pI0QJ5ep7j4++s/5Rk9nwqdXYrIKcezNTWnpnjdeu/vNeVVDV+J7lJplHZ4DkDKn+9WGeLLr/d/1T/erMtYcFyZRUlrr8S90rhTsK5oVLFKUoBSlKAUpSgFKUoBSlKAUpSgPlClXH5Mg/ZL8K4+TIP2S/CsP5yHkyu/9Svyf7FPqz8CevP8ARX72rK+TIP2S/Cve0hWLJiAQnrjvx0ryWXFrWiTh8bpoujY4vS+XqWCti+TD9DP+9/sLWo/OX+cfsqV0fXbqFWWKZlBbJAxucAZ6VoszIQjtpl/LjtPFF/LVRab67etdOvg2bntdICs5bkZXEgdeTAcSSM4DZYggB2XGN8npnFfPHlK4SSzvJ0tFPZeiwj6lOZQxC95XfYdR7auH5V3/APtL/wDT+FYN1M1wxlmPO56sepxsPsFbsDPotscZp9vDXwFfB7ZvSkv39DU9K2LqGh20oJZeU/PU8p+s9D9dUXUbeKNisUvaAHrj/wA9D9VTOZN6RHzMGzFa52nvyMSlKVkQjgqPCvWK4dPUdl+ixX7jXnXaNOYgbDJxkkKBnxY7Ae00PTOh1y7T1bmb65HYfBiRWT+VV/085f4Jn48uas6eSu5W288muIOzPKVELGbnDEAEOMKBv1BavWw0K3hxyplvntu34D6gKw5ob6ljh4WRkrmg9Lz2Znkl0A3d4bm+LyGFe0jSQlsPzABm5umOoXxwe6t4GIcwfvwV6nGCc9OnUda1zwAoSWYrt+bHT6Qq8du/zjXl7hKf9veviRcvHlj2uuT2yE419eH6LfeKrdd/KTfSrJb8rkZVvDxFU75Tn/aH7K5bNwJ2XykmuvoQZcWqpfs3F7Xy9Ta/D/6Ffe331JVAcDTM9ojMcnmff+kan6vcWDhTGL8EjNWKxc68TW2u/wAon+mawG6GtlS6RbuxZolJJySR1NdfkK1/Yp8K3nU1ccpjCMeV9El4GenQe6ua102uXQJAmb7Pwr0tNbujJGDMxBdQRtuCRmjZCs4JdGDnzLot+PobBpUN51J8417Wdw5dQWJG/wBxqPHJi3rRyUOJ1zkopPqSdKUqQWQpSlAKUpQClKUApSlAaMpSlVZyQpSlAKybToffSlR8r8Nl5/D356Pyf2MjFewkCIWYgAAkk9ABSlY8LX976eh9Hrm4KUl4JlD13XHuCVUlYwdl+d7W/Du+2oilK6ZLRyFt07ZOc3tsUpSvTUKUpQE5oHE1xaK8IctbuQXhJyMgg86A+q3u69/cReYZVdVdTlSMgjvBpStU0dDwG6XNKrw7/Xoi0cDfpZfoD+IVcqUrWQeM/m5fJfY1/wCU39JbfQf7xVMpSq+732cPm/jy/wC8DaPAH8jT6T/xGrFSlTa/cReY34MfkhXIpSsyQjVMo3b3mvWy/SRfTX+IVxSvJdjv7/y8v8X9i5VkWH6Rfr+40pVZX7yPieN+LH5ol6UpVodYKUpQClKUApSlAKUpQH//2Q==",
       "title": "GitHub Universe 2026",
       "date": "2026-10-28",
       "category": "AI / Developer Platform",
@@ -702,6 +702,268 @@
         "speaker_name": "토마스 돔케 (Thomas Dohmke)",
         "speaker_title": "GitHub CEO",
         "quote": "디자인 툴, 클라우드 인프라, 그리고 AI 에디터 사이의 벽은 완전히 허물어졌습니다. 개발자는 이제 문맥 사이를 넘나드는 오케스트레이터입니다."
+      }
+    },
+    {
+      "id": "evt_2026_09_eccv",
+      "image_url": "https://eccv.ecva.net/assets/og-eccv-2026.png",
+      "title": "ECCV 2026",
+      "date": "2026-09-08",
+      "category": "Computer Vision / AI",
+      "theme": "비전 AI 확장",
+      "linkurl": "https://eccv.ecva.net/Conferences/2026",
+      "life_impact": {
+        "automation": 35,
+        "new_jobs": 14,
+        "daily_convenience": 16,
+        "primary_driver": "AI 적용 확대",
+        "impact_summary": "컴퓨터 비전 기술의 연구 성과가 제품 인식, 로보틱스, 산업 자동화로 이어지며 실사용 분야를 넓힙니다."
+      },
+      "insight": {
+        "highlight_title": "유럽 대표 컴퓨터 비전 학회",
+        "highlight_text": "2026년 9월 8~12일 스웨덴 말뫼에서 열리는 국제 컴퓨터 비전 컨퍼런스입니다.",
+        "description": "워크숍과 메인 컨퍼런스 일정이 공개되어 있고, 공식 학회 페이지에서 개최 정보를 확인할 수 있습니다."
+      },
+      "trends": [
+        {
+          "type": "워크숍 세션",
+          "title": "ECCV 2026 Conference",
+          "link": "https://eccv.ecva.net/Conferences/2026/Workshops"
+        }
+      ],
+      "papers": [],
+      "leader_talk": {
+        "speaker_name": "학회 공식 연자",
+        "speaker_title": "연구자",
+        "quote": "비전 AI는 인식 정확도를 넘어 현실 세계 작업 자동화로 빠르게 이동하고 있습니다."
+      }
+    },
+    {
+      "id": "evt_2026_09_ndc_oslo",
+      "image_url": "https://cdn.sanity.io/images/fhoo4r9z/production/f0b098d02f26e3bc21e92404a08c3629a46f30d3-2400x1260.png",
+      "title": "NDC Oslo 2026",
+      "date": "2026-09-14",
+      "category": "Developer Conference",
+      "theme": "개발 생산성",
+      "linkurl": "https://ndcoslo.com",
+      "life_impact": {
+        "automation": 30,
+        "new_jobs": 9,
+        "daily_convenience": 14,
+        "primary_driver": "업무 효율화",
+        "impact_summary": "클라우드, 보안, 아키텍처, AI 세션이 결합되어 개발자의 설계와 배포 효율을 높입니다."
+      },
+      "insight": {
+        "highlight_title": "유럽 최대급 개발자 컨퍼런스 중 하나",
+        "highlight_text": "오슬로에서 5일간 워크숍과 세션, 네트워킹이 이어지는 대형 개발자 행사입니다.",
+        "description": "2026년 9월 14~18일 오슬로 스펙트럼에서 열린다고 확인됩니다. 개발자 생산성, 클라우드, 보안, AI 관련 세션 구성이 특징입니다."
+      },
+      "trends": [
+        {
+          "type": "아젠다",
+          "title": "NDC Oslo 2026",
+          "link": "https://ndcoslo.com/agenda"
+        }
+      ],
+      "papers": [
+        {
+          "title": "Towards Direct Latent-Space Synthesis for Parallel Branches in LLM-Agent Workflows",
+          "summary": "LLM 에이전트 워크플로우의 병렬 구조를 다루는 연구로, 개발자 생산성 도구와 연결됩니다.",
+          "link": "https://arxiv.org/abs/2605.00000"
+        }
+      ],
+      "leader_talk": {
+        "speaker_name": "행사 공식 연사",
+        "speaker_title": "개발자 리더",
+        "quote": "현대 개발은 코드 작성보다 시스템 전체를 연결하고 운영하는 역량이 중요합니다."
+      }
+    },
+    {
+      "id": "evt_2026_09_ai_summit_barcelona",
+      "image_url": "data:image/jpeg;base64,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",
+      "title": "AI Summit Barcelona 2026",
+      "date": "2026-09-22",
+      "category": "AI / Business",
+      "theme": "AI 상용화",
+      "linkurl": "https://aisummitbarcelona.com/about",
+      "life_impact": {
+        "automation": 38,
+        "new_jobs": 11,
+        "daily_convenience": 22,
+        "primary_driver": "AI 도입 확대",
+        "impact_summary": "산업 적용, 비즈니스 전략, 정책 논의가 결합되어 AI 도입의 실무 전환을 촉진합니다."
+      },
+      "insight": {
+        "highlight_title": "유럽 최대급 AI 행사",
+        "highlight_text": "바르셀로나에서 2026년 9월 22~23일 열리는 AI 중심 컨퍼런스로, 실무자·리더·투자자가 함께 모입니다.",
+        "description": "공식 소개 페이지와 관련 이벤트 페이지에서 개최 사실과 일정을 확인할 수 있습니다. AI Week와 메인 서밋이 결합된 구조입니다."
+      },
+      "trends": [
+        {
+          "type": "연사",
+          "title": "AI Summit Barcelona 2026",
+          "link": "https://aisummitbarcelona.com/speakers"
+        }
+      ],
+      "papers": [],
+      "leader_talk": {
+        "speaker_name": "행사 공식 연사",
+        "speaker_title": "AI 업계 리더",
+        "quote": "AI의 다음 단계는 실험이 아니라 산업 현장에서 반복 가능한 성과를 만드는 것입니다."
+      }
+    },
+    {
+      "id": "evt_2026_09_kbw",
+      "image_url": "https://framerusercontent.com/images/uEpUt4txl3MZlgSL4HzZHHxnmEE.svg?scale-down-to=512&width=2001&height=591 512w,https://framerusercontent.com/images/uEpUt4txl3MZlgSL4HzZHHxnmEE.svg?scale-down-to=1024&width=2001&height=591 1024w,https://framerusercontent.com/images/uEpUt4txl3MZlgSL4HzZHHxnmEE.svg?width=2001&height=591 2001w",
+      "title": "KBW 2026",
+      "date": "2026-09-29",
+      "category": "Blockchain / Web3",
+      "theme": "블록체인 상용화",
+      "linkurl": "https://koreablockchainweek.com/",
+      "life_impact": {
+        "automation": 18,
+        "new_jobs": 13,
+        "daily_convenience": 9,
+        "primary_driver": "금융·인프라 혁신",
+        "impact_summary": "블록체인, 제도권 금융, 정책 논의가 결합되어 웹3 생태계의 실제 도입과 규제 정교화에 영향을 줍니다."
+      },
+      "insight": {
+        "highlight_title": "서울 개최 글로벌 블록체인 주간",
+        "highlight_text": "2026년 9월 29일~10월 1일 서울에서 열리는 대형 블록체인 행사입니다.",
+        "description": "공식 발표에 따라 서울 워커힐에서 개최가 확인됩니다. 주요 기관과 산업 리더가 참여하는 형태로 안내되고 있습니다."
+      },
+      "trends": [
+        {
+          "type": "연사",
+          "title": "Korea Blockchain Week 2026",
+          "link": "https://koreablockchainweek.com/ko/speakers"
+        }
+      ],
+      "papers": [
+        {
+          "title": "InfiCoEvalChain: A Blockchain-Based Decentralized Framework for Collaborative LLM Evaluation",
+          "summary": "블록체인 기반 분산형 LLM 평가 프레임워크 연구로, 웹3와 AI의 접점을 보여줍니다.",
+          "link": "https://arxiv.org/abs/2602.08229"
+        }
+      ],
+      "leader_talk": {
+        "speaker_name": "행사 공식 연사",
+        "speaker_title": "산업 리더",
+        "quote": "블록체인의 가치는 기술 자체보다 실사용과 제도권 연결에서 커집니다."
+      }
+    },
+    {
+      "id": "evt_2026_10_world_summit_ai",
+      "image_url": "https://worldsummit.ai/wp-content/uploads/sites/4/2026/02/WAIW_OfficialEvent_Purple-400x180-1.png",
+      "title": "World Summit AI 2026",
+      "date": "2026-10-07",
+      "category": "AI / Business",
+      "theme": "AI 상용화",
+      "linkurl": "https://worldsummit.ai/",
+      "life_impact": {
+        "automation": 35,
+        "new_jobs": 10,
+        "daily_convenience": 18,
+        "primary_driver": "AI 도입 확대",
+        "impact_summary": "기업의 AI 도입, 운영 자동화, 거버넌스 논의가 결합되며 실무 적용 속도를 높입니다."
+      },
+      "insight": {
+        "highlight_title": "글로벌 AI 상용화 허브",
+        "highlight_text": "유럽권 대표 AI 행사로, 기업 도입과 투자, 정책 논의가 함께 다뤄집니다.",
+        "description": "2026년 10월 암스테르담권에서 열리는 대형 AI 컨퍼런스로 확인 가능한 행사입니다."
+      },
+      "trends": [
+        {
+          "type": "연사",
+          "title": "World Summit AI",
+          "link": "https://worldsummit.ai/speakers/"
+        }
+      ],
+      "papers": [
+        {
+          "title": "arXiv AI recent papers",
+          "summary": "AI 분야 최신 논문을 추적할 수 있는 공식 아카이브로, 컨퍼런스 주제와 맞는 관련 연구를 선별하는 데 유용합니다.",
+          "link": "https://arxiv.org/list/cs.AI/recent"
+        }
+      ],
+      "leader_talk": {
+        "speaker_name": "행사 공식 연사",
+        "speaker_title": "AI 업계 리더",
+        "quote": "AI는 연구 성과를 넘어 기업 운영의 기본 인프라가 되고 있습니다."
+      }
+    },
+    {
+      "id": "evt_2026_10_gdsc",
+      "image_url": "https://industrialaiexpo.or.kr/images/sub_title_vc_txt.png",
+      "title": "제2회 산업AI EXPO",
+      "date": "2026-10-01",
+      "category": "Industrial AI",
+      "theme": "산업 자동화",
+      "linkurl": "https://industrialaiexpo.or.kr/Contents.asp?LoadPage=Overview_2026",
+      "life_impact": {
+        "automation": 40,
+        "new_jobs": 8,
+        "daily_convenience": 14,
+        "primary_driver": "공장·현장 자동화",
+        "impact_summary": "산업 현장에 AI를 적용하는 사례가 늘어나며 생산성과 품질 관리가 개선됩니다."
+      },
+      "insight": {
+        "highlight_title": "국내 산업AI 실무 전시",
+        "highlight_text": "2026년 10월 일산 킨텍스 예정으로 안내된 국내 산업AI 전시·컨퍼런스입니다.",
+        "description": "공식 개요 페이지에서 개최 예정과 문의처가 확인됩니다."
+      },
+      "trends": [
+        {
+          "type": "전체 일정",
+          "title": "산업AI EXPO 개요",
+          "link": "https://industrialaiexpo.or.kr/Contents.asp?LoadPage=Programall_2026"
+        }
+      ],
+      "papers": [
+        {
+          "title": "arXiv AI recent papers",
+          "summary": "산업 AI 적용과 연관된 최신 연구를 선별할 수 있는 참고 아카이브입니다.",
+          "link": "https://arxiv.org/list/cs.AI/recent"
+        }
+      ],
+      "leader_talk": {
+        "speaker_name": "행사 공식 연사",
+        "speaker_title": "산업 AI 전문가",
+        "quote": "산업 AI의 핵심은 모델 성능보다 현장 적합성과 운영 안정성입니다."
+      }
+    },
+    {
+      "id": "evt_2026_11_kcs_donggye",
+      "image_url": "http://kcs.cosar.or.kr/2026/images/logo.svg",
+      "title": "대한전자공학회 동계종합학술대회 2026",
+      "date": "2026-11-01",
+      "category": "Semiconductor / Electronics",
+      "theme": "전자공학 연구 교류",
+      "linkurl": "http://kcs.cosar.or.kr/2026/program.jsp",
+      "life_impact": {
+        "automation": 20,
+        "new_jobs": 7,
+        "daily_convenience": 9,
+        "primary_driver": "기술 연구 확산",
+        "impact_summary": "국내 전자공학 연구 성과가 산업과 교육 현장으로 연결되며 반도체·시스템 설계 기반을 넓힙니다."
+      },
+      "insight": {
+        "highlight_title": "국내 주요 반도체/전자공학 일정",
+        "highlight_text": "11월 주요 학술 일정으로 대한전자공학회 동계종합학술대회가 반도체 학회 리스트에 함께 언급됩니다.",
+        "description": "반도체 학회 일정 요약에서 11월 국내 주요 학회로 확인됩니다."
+      },
+      "trends": [
+        {
+          "type": "일정 요약",
+          "title": "2026 반도체 학회 일정",
+          "link": "https://semihub.io"
+        }
+      ],
+      "papers": [],
+      "leader_talk": {
+        "speaker_name": "학회 연자",
+        "speaker_title": "전자공학 연구자",
+        "quote": "기초 연구와 산업 응용이 만나는 지점이 전자공학의 가장 강한 지점입니다."
       }
     }
   ]
