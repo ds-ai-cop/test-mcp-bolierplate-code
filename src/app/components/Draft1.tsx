@@ -216,7 +216,7 @@ const TimeRoadmap = ({
 
         return (
           <SectionContainer
-            title="타임 로드맵 (이달의 일정)"
+            title="타임 로드맵"
             headerRight={
               <button className="p-1 hover:bg-slate-100 rounded-md transition-colors">
                 <MoreVertical size={10} />
