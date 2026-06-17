@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef } from "react";
+import { ChevronRight } from "lucide-react";
 import { differenceInCalendarDays, format, parseISO } from "date-fns";
 import type { RoadmapDatasetEvent } from "../types/time-roadmap";
 
@@ -7,7 +8,8 @@ type MonthlyEventTimelineProps = {
   selectedEventIds: Set<string>;
   highlightedEventId?: string | null;
   mode?: "light" | "dark";
-  onEventClick: (event: RoadmapDatasetEvent) => void;
+  onEventSelect: (event: RoadmapDatasetEvent) => void;
+  onOpenDetail: (event: RoadmapDatasetEvent) => void;
 };
 
 const DEFAULT_STYLE = {
@@ -55,7 +57,8 @@ export function MonthlyEventTimeline({
   selectedEventIds,
   highlightedEventId,
   mode = "light",
-  onEventClick,
+  onEventSelect,
+  onOpenDetail,
 }: MonthlyEventTimelineProps) {
   const isDark = mode === "dark";
   const defaultStyle = DEFAULT_STYLE[isDark ? "dark" : "light"];
@@ -163,30 +166,46 @@ export function MonthlyEventTimeline({
                   />
                 </div>
 
-                <button
-                  type="button"
-                  onClick={() => onEventClick(event)}
-                  className={`min-w-0 flex-1 rounded-lg px-2.5 py-2 text-left transition-transform active:scale-[0.99] ${
-                    isSelected ? "border border-dashed" : "border"
+                <div
+                  className={`flex min-w-0 flex-1 items-center gap-1 rounded-lg border pr-1 transition-transform ${
+                    isSelected ? "border-dashed" : ""
                   }`}
                   style={{
                     backgroundColor: accent.bg,
                     borderColor: accent.border,
                   }}
                 >
-                  <div
-                    className="text-[8px] font-bold leading-snug"
-                    style={{ color: accent.title }}
+                  <button
+                    type="button"
+                    onClick={() => onEventSelect(event)}
+                    className="min-w-0 flex-1 px-2.5 py-2 text-left active:scale-[0.99]"
                   >
-                    {event.title}
-                  </div>
-                  <div
-                    className="mt-0.5 text-[7px] leading-snug"
-                    style={{ color: accent.sub }}
+                    <div
+                      className="text-[8px] font-bold leading-snug"
+                      style={{ color: accent.title }}
+                    >
+                      {event.title}
+                    </div>
+                    <div
+                      className="mt-0.5 text-[7px] leading-snug"
+                      style={{ color: accent.sub }}
+                    >
+                      [{ddayLabel}] {event.category}
+                    </div>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => onOpenDetail(event)}
+                    aria-label={`${event.title} 상세 보기`}
+                    className={`shrink-0 rounded-md p-1.5 transition-colors ${
+                      isDark
+                        ? "text-slate-400 hover:bg-slate-800 hover:text-slate-200"
+                        : "text-slate-400 hover:bg-slate-100 hover:text-slate-600"
+                    }`}
                   >
-                    [{ddayLabel}] {event.category}
-                  </div>
-                </button>
+                    <ChevronRight size={12} strokeWidth={2.5} />
+                  </button>
+                </div>
               </div>
             );
           })}

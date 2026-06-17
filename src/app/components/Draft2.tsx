@@ -1,21 +1,23 @@
-import React, { useCallback, useMemo } from "react";
-import { MoreVertical } from "lucide-react";
+import React, { useCallback, useMemo, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import {
+  addMonths,
   differenceInCalendarDays,
   format,
   isSameDay,
   parseISO,
   startOfDay,
+  subMonths,
 } from "date-fns";
 import { ko } from "date-fns/locale/ko";
 import { GeminiTimeRoadmapConnector } from "./agent/GeminiTimeRoadmapConnector";
 import { EventQuickBriefing } from "./EventQuickBriefing";
 import { MonthlyEventTimeline } from "./MonthlyEventTimeline";
+import { SwipeableCalendar } from "./SwipeableCalendar";
 import { getDefaultMonthlyEvent, getMonthlyEvents, isCurrentMonth } from "../utils/time-roadmap-month";
 import roadmap2026 from "../data/2026.json";
 import type { RoadmapDatasetEvent } from "../types/time-roadmap";
@@ -150,6 +152,7 @@ const CoreSignals = ({
 const TimeRoadmap = ({
   onOpenDetail,
   onFocusEventChange,
+  focusEvent,
   calendarSelected,
   onCalendarSelectedChange,
   calendarMonth,
@@ -157,13 +160,25 @@ const TimeRoadmap = ({
 }: {
   onOpenDetail: (event: RoadmapDatasetEvent) => void;
   onFocusEventChange?: (event: RoadmapDatasetEvent | null) => void;
+  focusEvent?: RoadmapDatasetEvent | null;
   calendarSelected: Date | undefined;
   onCalendarSelectedChange: (date: Date | undefined) => void;
   calendarMonth: Date;
   onCalendarMonthChange: (month: Date) => void;
 }) => {
+  const [hasUserPickedDate, setHasUserPickedDate] = useState(false);
+
+  const handleCalendarSelect = useCallback(
+    (date: Date | undefined) => {
+      setHasUserPickedDate(true);
+      onCalendarSelectedChange(date);
+    },
+    [onCalendarSelectedChange],
+  );
+
   const handleMonthChange = useCallback(
     (month: Date) => {
+      setHasUserPickedDate(false);
       onCalendarMonthChange(month);
       const defaultEvent = getDefaultMonthlyEvent(month);
 
@@ -186,6 +201,17 @@ const TimeRoadmap = ({
       onCalendarSelectedChange,
       onFocusEventChange,
     ],
+  );
+
+  const handleSwipeMonth = useCallback(
+    (direction: "prev" | "next") => {
+      const nextMonth =
+        direction === "next"
+          ? addMonths(calendarMonth, 1)
+          : subMonths(calendarMonth, 1);
+      handleMonthChange(nextMonth);
+    },
+    [calendarMonth, handleMonthChange],
   );
 
   return (
@@ -215,34 +241,50 @@ const TimeRoadmap = ({
           ),
         ) as RoadmapDatasetEvent[];
         const selectedDatasetEvent = selectedDatasetEvents[0];
+        const userPickedEmptyDay =
+          hasUserPickedDate &&
+          isSelectedInViewedMonth &&
+          calendarSelected != null &&
+          selectedDatasetEvents.length === 0;
+        const focusedMonthlyEvent =
+          focusEvent &&
+          calendarSelected &&
+          isSameDay(parseISO(focusEvent.date), calendarSelected) &&
+          monthlyDatasetEvents.some((event) => event.id === focusEvent.id)
+            ? monthlyDatasetEvents.find((event) => event.id === focusEvent.id)
+            : undefined;
         const briefingEvent =
-          selectedDatasetEvent ?? defaultMonthlyEvent ?? null;
-        onFocusEventChange?.(briefingEvent);
+          focusedMonthlyEvent ??
+          selectedDatasetEvent ??
+          defaultMonthlyEvent ??
+          null;
+        if (!userPickedEmptyDay) {
+          onFocusEventChange?.(briefingEvent);
+        }
 
-        const selectedEventIds =
-          selectedDatasetEvents.length > 0
-            ? new Set(selectedDatasetEvents.map((event) => event.id))
-            : defaultMonthlyEvent
-              ? new Set([defaultMonthlyEvent.id])
-              : new Set<string>();
+        const selectedEventIds = userPickedEmptyDay
+          ? new Set<string>()
+          : focusedMonthlyEvent
+            ? new Set([focusedMonthlyEvent.id])
+            : selectedDatasetEvents.length > 0
+              ? new Set(selectedDatasetEvents.map((event) => event.id))
+              : defaultMonthlyEvent
+                ? new Set([defaultMonthlyEvent.id])
+                : new Set<string>();
 
-        const highlightedEventId = briefingEvent?.id ?? null;
+        const highlightedEventId = userPickedEmptyDay
+          ? null
+          : briefingEvent?.id ?? null;
 
         return (
-          <SectionContainer
-            title="타임 로드맵"
-            headerRight={
-              <button className="p-1 hover:bg-slate-800 text-slate-400 rounded-md transition-colors">
-                <MoreVertical size={10} />
-              </button>
-            }
-          >
+          <SectionContainer title="타임 로드맵">
             <div className="flex flex-col">
               <div className="mb-2.5">
-                <DayPicker
+                <SwipeableCalendar onSwipeMonth={handleSwipeMonth}>
+                  <DayPicker
                   mode="single"
                   selected={calendarSelected}
-                  onSelect={onCalendarSelectedChange}
+                  onSelect={handleCalendarSelect}
                   fixedWeeks
                   month={calendarMonth}
                   onMonthChange={handleMonthChange}
@@ -282,6 +324,7 @@ const TimeRoadmap = ({
                     },
                   }}
                 />
+                </SwipeableCalendar>
               </div>
 
               <MonthlyEventTimeline
@@ -289,11 +332,12 @@ const TimeRoadmap = ({
                 selectedEventIds={selectedEventIds}
                 highlightedEventId={highlightedEventId}
                 mode="dark"
-                onEventClick={(event) => {
+                onEventSelect={(event) => {
+                  setHasUserPickedDate(true);
                   onCalendarSelectedChange(parseISO(event.date));
                   onFocusEventChange?.(event);
-                  onOpenDetail(event);
                 }}
+                onOpenDetail={onOpenDetail}
               />
 
               {(loading || error) && (
@@ -349,6 +393,7 @@ export const Draft2 = ({
         <TimeRoadmap
           onOpenDetail={onOpenDetail}
           onFocusEventChange={onFocusEventChange}
+          focusEvent={focusEvent}
           calendarSelected={calendarSelected}
           onCalendarSelectedChange={onCalendarSelectedChange}
           calendarMonth={calendarMonth}
