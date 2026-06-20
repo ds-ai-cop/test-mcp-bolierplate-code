@@ -18,7 +18,7 @@ import { GeminiTimeRoadmapConnector } from "./agent/GeminiTimeRoadmapConnector";
 import { EventQuickBriefing } from "./EventQuickBriefing";
 import { MonthlyEventTimeline } from "./MonthlyEventTimeline";
 import { SwipeableCalendar } from "./SwipeableCalendar";
-import { getDefaultMonthlyEvent, getMonthlyEvents, isCurrentMonth } from "../utils/time-roadmap-month";
+import { getDefaultMonthlyEvent, getMonthlyEvents, isCurrentMonth, shouldClearTimelineHighlight } from "../utils/time-roadmap-month";
 import roadmap2026 from "../data/2026.json";
 import type { RoadmapDatasetEvent } from "../types/time-roadmap";
 
@@ -246,6 +246,13 @@ const TimeRoadmap = ({
           isSelectedInViewedMonth &&
           calendarSelected != null &&
           selectedDatasetEvents.length === 0;
+        const clearTimelineHighlight = shouldClearTimelineHighlight({
+          calendarMonth,
+          calendarSelected,
+          hasUserPickedDate,
+          selectedDatasetEventsCount: selectedDatasetEvents.length,
+          isSelectedInViewedMonth,
+        });
         const focusedMonthlyEvent =
           focusEvent &&
           calendarSelected &&
@@ -262,7 +269,7 @@ const TimeRoadmap = ({
           onFocusEventChange?.(briefingEvent);
         }
 
-        const selectedEventIds = userPickedEmptyDay
+        const selectedEventIds = clearTimelineHighlight
           ? new Set<string>()
           : focusedMonthlyEvent
             ? new Set([focusedMonthlyEvent.id])
@@ -272,7 +279,7 @@ const TimeRoadmap = ({
                 ? new Set([defaultMonthlyEvent.id])
                 : new Set<string>();
 
-        const highlightedEventId = userPickedEmptyDay
+        const highlightedEventId = clearTimelineHighlight
           ? null
           : briefingEvent?.id ?? null;
 

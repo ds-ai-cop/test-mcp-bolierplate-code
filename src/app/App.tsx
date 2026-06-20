@@ -13,8 +13,10 @@ import { Draft3 } from "./components/Draft3";
 import { Moon, Sun } from "lucide-react";
 import type { RoadmapDatasetEvent } from "./types/time-roadmap";
 import roadmap2026 from "./data/2026.json";
+import { getInitialLandingState } from "./utils/time-roadmap-month";
 
 const FULL_BLEED_MODE = true;
+const INITIAL_LANDING = getInitialLandingState();
 
 function DetailPage({
   mainMode,
@@ -50,10 +52,14 @@ function DetailPage({
 export default function App() {
   const [mainMode, setMainMode] = useState<1 | 2>(1);
   const [calendarSelected, setCalendarSelected] = useState<Date | undefined>(
-    () => new Date(),
+    () => INITIAL_LANDING.calendarSelected,
   );
-  const [calendarMonth, setCalendarMonth] = useState<Date>(() => new Date());
-  const [focusEvent, setFocusEvent] = useState<RoadmapDatasetEvent | null>(null);
+  const [calendarMonth, setCalendarMonth] = useState<Date>(
+    () => INITIAL_LANDING.calendarMonth,
+  );
+  const [focusEvent, setFocusEvent] = useState<RoadmapDatasetEvent | null>(
+    () => INITIAL_LANDING.focusEvent,
+  );
 
   const isDarkMode = mainMode === 2;
   const navigate = useNavigate();
